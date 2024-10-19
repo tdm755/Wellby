@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../assets/images/default-background.png';
 import HamburgerMenu from '../../assets/icons/hamburger-menu.svg';
-import HeaderPatch from '../../assets/SVG/header-patch.svg';
 import Sidebar from '../Components/Sidebar';
 
 function DefaultLayout({ children }) {
@@ -36,7 +35,7 @@ function DefaultLayout({ children }) {
               />
             </div>
             {/* Header Patch */}
-            {/* <div className="flex-grow p-5 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
+            <div className="flex-grow p-5 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
               <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.2rem] right-0" style={{
                 clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
               }}>               
@@ -46,8 +45,7 @@ function DefaultLayout({ children }) {
                 clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
               }}></div>
                                          
-            </div> */}
-            <img src={HeaderPatch} alt="Header Patch" className="w-full h-auto absolute top-[2.2rem]" />
+            </div> 
           </div>
         </header>
 
