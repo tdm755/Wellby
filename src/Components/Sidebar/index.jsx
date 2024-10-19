@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseIcon from '../../../assets/icons/close-icon.svg';
-import SidebarImage from '../../../assets/SVG/sidebar-img.svg';
+import SidebarImage from '../../../assets/SVG/sidebar.svg';
 
 function Sidebar({ isOpen, onClose }) {
   return (
@@ -22,11 +22,19 @@ function Sidebar({ isOpen, onClose }) {
         <img 
           src={SidebarImage} 
           alt="Sidebar" 
-          className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-auto"
+          className="absolute top-[10%] left-0 w-full h-auto"
+          style={{ top: 'calc(10% + 20px)' }}
         />
-      </div>
-      <div className="text-white text-center text-lg font-bold">
-        Manage your Account
+        {/* Login */}
+        <div className="absolute top-[60%] left-0 w-[90%] px-4 mx-4">
+          <h2 className="text-white text-md font-bold mb-2 border-b border-white pb-1">Manage your Account</h2>
+          <div className="text-white text-sm mb-4 font-bold">
+            Login to your <span className="text-[#FFCB05] font-bold">WellbyQR<br />Emergency Assistance</span> Account<br />to update your details.
+          </div>
+          <div className="bg-gradient-to-b from-[#FFCB05] to-[#FFA500] text-white text-xl font-bold py-2 px-4 rounded-md mb-4 text-center shadow-lg">
+            Login
+          </div>
+        </div>
       </div>
     </div>
   );

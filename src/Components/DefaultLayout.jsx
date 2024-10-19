@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../assets/images/default-background.png';
 import HamburgerMenu from '../../assets/icons/hamburger-menu.svg';
 import Sidebar from '../Components/Sidebar';
@@ -10,9 +11,16 @@ function DefaultLayout({ children }) {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handlers = useSwipeable({
+    onSwipedRight: () => setIsSidebarOpen(true),
+    onSwipedLeft: () => setIsSidebarOpen(false),
+    trackMouse: true
+  });
+
   return (
     <div className="min-h-screen bg-black flex justify-center">
       <div 
+        {...handlers}
         className="w-[425px] min-h-screen bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
