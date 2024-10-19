@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../assets/images/default-background.png';
 import HamburgerMenu from '../../assets/icons/hamburger-menu.svg';
+import HeaderPatch from '../../assets/SVG/header-patch.svg';
 import Sidebar from '../Components/Sidebar';
 
 function DefaultLayout({ children }) {
@@ -24,15 +25,30 @@ function DefaultLayout({ children }) {
         className="w-[425px] min-h-screen bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
-        <header className="absolute top-3 left-0 w-full p-5 z-10">
-          {!isSidebarOpen && (
-            <img 
-              src={HamburgerMenu} 
-              alt="Menu" 
-              className="w-6 h-6 cursor-pointer" 
-              onClick={toggleSidebar}
-            />
-          )}
+        <header className="absolute top-3 left-0 w-full z-10">
+          <div className="flex items-center">
+            <div className="p-5">
+              <img 
+                src={HamburgerMenu} 
+                alt="Menu" 
+                className="w-[25px] h-[30px] cursor-pointer" 
+                onClick={toggleSidebar}
+              />
+            </div>
+            {/* Header Patch */}
+            {/* <div className="flex-grow p-5 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
+              <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.2rem] right-0" style={{
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
+              }}>               
+                
+              </div> 
+              <div className="w-[30px] h-[20px] bg-[#ffd502] absolute top-6 right-0" style={{
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
+              }}></div>
+                                         
+            </div> */}
+            <img src={HeaderPatch} alt="Header Patch" className="w-full h-auto absolute top-[2.2rem]" />
+          </div>
         </header>
 
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />

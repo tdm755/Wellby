@@ -5,7 +5,7 @@ import SidebarImage from '../../../assets/SVG/sidebar.svg';
 function Sidebar({ isOpen, onClose }) {
   return (
     <div 
-      className={`fixed top-0 left-0 h-full w-4/5 bg-[#FF3E4D] transition-transform duration-300 ease-in-out transform ${
+      className={`absolute top-0 left-0 h-full w-4/5 bg-[#FF3E4D] transition-transform duration-300 ease-in-out transform ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       } z-30 flex flex-col`}
     >
