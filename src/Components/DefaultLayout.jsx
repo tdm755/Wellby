@@ -24,7 +24,7 @@ function DefaultLayout({ children }) {
         className="w-[425px] min-h-screen bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
-        <header className="absolute top-0 left-0 w-full p-4 z-10">
+        <header className="absolute top-3 left-0 w-full p-5 z-10">
           {!isSidebarOpen && (
             <img 
               src={HamburgerMenu} 
@@ -37,7 +37,13 @@ function DefaultLayout({ children }) {
 
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
-        {children}
+        <div className={`relative z-10 ${isSidebarOpen ? 'opacity-50' : ''}`}>
+          {children}
+        </div>
+
+        {isSidebarOpen && (
+          <div className="absolute inset-0 bg-black opacity-50 z-20" onClick={() => setIsSidebarOpen(false)} />
+        )}
       </div>
     </div>
   );
