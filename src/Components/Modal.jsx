@@ -6,7 +6,7 @@ function Modal({ isOpen, onClose, children }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center">
-      <div className="bg-white w-[425px] h-[70vh] rounded-t-2xl p-6 animate-slide-up relative overflow-y-auto">
+      <div className="bg-white w-[400px] h-[70vh] rounded-t-2xl p-6 animate-slide-up relative overflow-y-auto">
         <div className="absolute top-4 right-4 flex items-center">
           <span className="mr-2 text-black text-xs font-bold cursor-pointer" onClick={onClose}>CLOSE</span>
           <img 

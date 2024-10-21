@@ -14,14 +14,21 @@ function Header({ toggleSidebar }) {
             onClick={toggleSidebar}
           />
         </div>
-        <div className="flex-grow p-5 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
+        <div className="flex-grow p-3 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
+        <span className="text-white font-bold text-xs text-left w-full">Safety is Everyone's responsibility</span>
           <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.2rem] right-0" style={{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
-          }}></div> 
-          <div className="w-[30px] h-[20px] bg-[#ffd502] absolute top-6 right-0" style={{
+          }}></div>          
+          <div className="w-[20px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-6 right-[56px]" style={{
+            clipPath: 'polygon(0 0, 70% 0, 100% 100%, 30% 100%)'
+          }}></div>
+           <div className="w-[20px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-6 right-[33px]" style={{
+            clipPath: 'polygon(0 0, 70% 0, 100% 100%, 30% 100%)'
+          }}></div>
+          <div className="w-[30px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-6 right-0" style={{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
           }}></div>
-        </div> 
+          </div>
       </div>
     </header>
   );

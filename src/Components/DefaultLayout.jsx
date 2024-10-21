@@ -3,7 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../public/assets/images/default-background.png';
 import Sidebar from '../Components/Sidebar';
 import Header from '../Components/Header';
-import HomePage from './Pages/HomePage.jsx';
+import HeroSection from './HeroSection.jsx';
 
 function DefaultLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,7 +18,7 @@ function DefaultLayout({ children }) {
   });
 
   return (
-    <div className="min-h-screen bg-black flex justify-center select-none">
+    <div className="min-h-screen bg-black flex justify-center">
       <div 
         {...handlers}
         className="w-[400px] min-h-screen bg-cover bg-center relative overflow-hidden"
@@ -29,12 +29,10 @@ function DefaultLayout({ children }) {
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
         {/* <div className={`relative z-10 ${isSidebarOpen ? 'opacity-50' : ''}`}>
-          {children}          
+          {children}
         </div> */}
 
-        <HomePage />
-
-        
+        <HeroSection />
 
         {isSidebarOpen && (
           <div className="absolute inset-0 bg-black opacity-50 z-20" onClick={() => setIsSidebarOpen(false)} />
