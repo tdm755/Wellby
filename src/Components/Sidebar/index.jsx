@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CloseIcon from '../../../assets/icons/close-icon.svg';
-import SidebarImage from '../../../assets/SVG/sidebar.svg';
+import CloseIcon from '../../../public/assets/icons/close-icon.svg';
+import SidebarImage from '../../../public/assets/SVG/sidebar.svg';
 import Modal from '../Modal';
 
 function Sidebar({ isOpen, onClose }) {

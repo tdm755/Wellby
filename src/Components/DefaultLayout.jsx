@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import DefaultBackground from '../../assets/images/default-background.png';
+import DefaultBackground from '../../public/assets/images/default-background.png';
 import Sidebar from '../Components/Sidebar';
 import Header from '../Components/Header';
 

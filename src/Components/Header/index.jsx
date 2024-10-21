@@ -1,5 +1,6 @@
 import React from 'react';
-import HamburgerMenu from '../../../assets/icons/hamburger-menu.svg';
+import LogoIcon from '../../../public/assets/icons/logo.svg'
+import HamburgerMenu from '../../../public/assets/icons/hamburger-menu.svg';
 
 function Header({ toggleSidebar }) {
   return (

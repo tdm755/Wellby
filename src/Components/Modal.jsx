@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSwipeable } from 'react-swipeable';
-import CloseIcon from '../../assets/icons/close-icon.svg';
+import CloseIcon from '../../public/assets/icons/close-icon.svg';
 
 function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
