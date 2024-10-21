@@ -12,7 +12,7 @@ function DefaultLayout({ children }) {
   };
 
   const handlers = useSwipeable({
-    onSwipedRight: () => setIsSidebarOpen(true),
+    // onSwipedRight: () => setIsSidebarOpen(true),
     onSwipedLeft: () => setIsSidebarOpen(false),
     trackMouse: true
   });
