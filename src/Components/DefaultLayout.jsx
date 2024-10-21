@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../public/assets/images/default-background.png';
 import Sidebar from '../Components/Sidebar';
@@ -7,6 +7,19 @@ import HomePage from './Pages/HomePage.jsx';
 
 function DefaultLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isSidebarOpen]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -18,10 +31,10 @@ function DefaultLayout({ children }) {
   });
 
   return (
-    <div className="min-h-screen bg-black flex justify-center select-none">
+    <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
       <div 
         {...handlers}
-        className="w-[400px] min-h-screen bg-cover bg-center relative overflow-hidden"
+        className={`w-[400px] min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
         <Header toggleSidebar={toggleSidebar} />
