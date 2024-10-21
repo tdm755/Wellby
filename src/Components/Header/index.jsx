@@ -4,7 +4,7 @@ import HamburgerMenu from '../../../public/assets/icons/hamburger-menu.svg';
 
 function Header({ toggleSidebar }) {
   return (
-    <header className="absolute top-3 left-0 w-full z-10">
+    <header className="absolute top-3 left-0 w-full z-50">
       <div className="flex items-center">
         <div className="p-5">
           <img 
