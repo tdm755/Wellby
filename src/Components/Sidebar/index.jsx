@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import CloseIcon from '../../../public/assets/icons/close-icon.svg';
 import SidebarImage from '../../../public/assets/SVG/sidebar.svg';
-import Modal from '../Modal';
+import LoginModal from './LoginModal';
 
 function Sidebar({ isOpen, onClose }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const handleLogin = () => {
-    setIsModalOpen(true);
+    setIsLoginModalOpen(true);
     onClose(); // Close the sidebar when opening the modal
   };
 
@@ -50,27 +50,10 @@ function Sidebar({ isOpen, onClose }) {
         </div>
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Welcome</h2>
-        <p className="text-md mb-4 font-bold">
-          <span className="border-b border-[#FFA500] pb-2">Enter your reg</span>istered mobile number
-        </p>
-        <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
-        <div className="flex items-center mb-4 gap-2">
-          <div className="shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]">
-            <select className="bg-white text-gray-700 rounded-md py-2 px-2 font-bold">
-              <option>+91</option>
-            </select>
-          </div>
-          <div className="flex-grow shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]">
-            <input
-              type="tel"
-              placeholder="ENTER YOUR MOBILE NUMBER"
-              className="w-full bg-white text-gray-700 rounded-md py-2 px-3 text-sm"
-            />
-          </div>
-        </div>
-      </Modal>
+      <LoginModal 
+        isOpen={isLoginModalOpen} 
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </>
   );
 }
