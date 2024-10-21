@@ -1,18 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DownIcon from '../../../public/assets/SVG/down-icon.svg'
+import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
 import Modal from '../Modal';
 
 function LoginModal({ isOpen, onClose }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [showVerification, setShowVerification] = useState(false);
+  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
+
+  useEffect(() => {
+    let timer;
+    if (showVerification && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prevCount) => prevCount - 1);
+      }, 1000);
+    }
+
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [showVerification, countdown]);
 
   const handleConfirm = () => {
     setShowVerification(true);
+    setCountdown(120); // Reset countdown when verification part appears
   };
+
+  const handleOtpChange = (index, value) => {
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+  };
+
+  const isOtpComplete = otp.every(digit => digit !== '');
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="relative overflow-hidden" style={{ height: '400px' }}> {/* Adjust height as needed */}
+      <div className="relative overflow-hidden" style={{ height: '450px' }}> {/* Adjust height as needed */}
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
@@ -58,24 +83,51 @@ function LoginModal({ isOpen, onClose }) {
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
           <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Verify Number</h2>
-          <p className="text-md mb-4">OTP sent to +91 {mobileNumber}</p>
-          <button className="text-[#FFA500] underline mb-4">CHANGE NUMBER?</button>
-          <div className="flex gap-2 mb-4 justify-center">
-            {[...Array(6)].map((_, index) => (
+          <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-3">OTP sent to +9</span>1 {mobileNumber}</p>
+          <button className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs">
+            CHANGE NUMBER? 
+            <img src={ForwardIcon} alt="forward-icon" className="w-4 h-3 ml-2" />
+          </button>
+          <div className="flex gap-2 mb-3 mt-4">
+            {otp.map((digit, index) => (
               <input
                 key={index}
-                type="text"
+                type="tel"
                 maxLength="1"
-                className="w-11 h-11 text-center border rounded-md focus:border-[#1DC63C] outline-none shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]"
-                onClick={(e) => e.target.style.borderColor = '#1DC63C'}
-                onBlur={(e) => e.target.style.borderColor = ''}
+                value={digit}
+                className="w-12 h-12 text-center border rounded-md outline-none shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]"
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, '');
+                  handleOtpChange(index, value);
+                  if (value && e.target.nextSibling) {
+                    e.target.nextSibling.focus();
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Backspace' && !e.target.value && e.target.previousSibling) {
+                    e.preventDefault();
+                    e.target.previousSibling.focus();
+                  }
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#1DC63C'}
+                onBlur={(e) => e.target.style.borderColor = e.target.value ? '#1DC63C' : ''}
+                style={{ borderColor: digit ? '#1DC63C' : '' }}
               />
             ))}
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-gray-500">02:00</span>
-            <button className="text-[#FFA500] underline">OTP not received? Resend OTP</button>
+          <div className="flex justify-between items-center mb-4">
+            <span className={`font-bold ${countdown === 0 ? 'text-[#FF483C]' : 'text-[#FFA500]'}`}>
+              {String(Math.floor(countdown / 60)).padStart(2, '0')}:{String(countdown % 60).padStart(2, '0')}
+            </span>
+            <button className="">OTP not received? <span className="text-[#FF483C] font-bold">Resend OTP</span></button>
           </div>
+          {isOtpComplete && (
+            <button
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
+            >
+              Verify
+            </button>
+          )}
         </div>
       </div>
     </Modal>

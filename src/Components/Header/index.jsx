@@ -14,8 +14,8 @@ function Header({ toggleSidebar }) {
             onClick={toggleSidebar}
           />
         </div>
-        <div className="flex-grow p-3 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
-        <span className="text-white font-bold text-xs text-left w-full">Safety is Everyone's responsibility</span>
+        <div className="flex-grow p-4 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
+        <span className="text-white font-bold text-[0.83rem] text-left w-full">Safety is Everyone's responsibility</span>
           <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.2rem] right-0" style={{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
           }}></div>          
