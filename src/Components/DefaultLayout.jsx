@@ -3,7 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../public/assets/images/default-background.png';
 import Sidebar from '../Components/Sidebar';
 import Header from '../Components/Header';
-import HeroSection from './HeroSection';
+import HeroSection from './HeroSection.jsx';
 
 function DefaultLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
