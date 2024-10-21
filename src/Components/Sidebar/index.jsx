@@ -56,15 +56,19 @@ function Sidebar({ isOpen, onClose }) {
           <span className="border-b border-[#FFA500] pb-2">Enter your reg</span>istered mobile number
         </p>
         <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
-        <div className="flex items-center mb-4">
-          <select className="bg-gray-100 text-gray-700 rounded-l-md py-2 px-2 mr-1 font-bold">
-            <option>+91</option>
-          </select>
-          <input
-            type="tel"
-            placeholder="ENTER YOUR MOBILE NUMBER"
-            className="flex-grow bg-gray-100 text-gray-700 rounded-r-md py-2 px-3 text-sm"
-          />
+        <div className="flex items-center mb-4 gap-2">
+          <div className="shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]">
+            <select className="bg-white text-gray-700 rounded-md py-2 px-2 font-bold">
+              <option>+91</option>
+            </select>
+          </div>
+          <div className="flex-grow shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]">
+            <input
+              type="tel"
+              placeholder="ENTER YOUR MOBILE NUMBER"
+              className="w-full bg-white text-gray-700 rounded-md py-2 px-3 text-sm"
+            />
+          </div>
         </div>
       </Modal>
     </>
