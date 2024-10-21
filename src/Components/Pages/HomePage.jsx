@@ -12,7 +12,7 @@ import AlertIcon from '../../../public/assets/images/AlertIcon.svg'
 function HomePage() {
   return (
     <div className='flex flex-col items-center justify-center'>
-      <HeroSection />
+      {/* <HeroSection /> */}
      <div className="w-full flex flex-col gap-4 items-center justify-center mt-12 px-5">
       <div className="flex flex-col gap-4 w-full items-center justify-center">
         <h3 className='flex gap-1 text-md font-semibold tracking-[0.20em] text-[#0F4254]  uppercase'>Find my details below <img className='w-3' src={AlertIcon} alt="" /></h3>
