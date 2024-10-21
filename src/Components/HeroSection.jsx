@@ -5,7 +5,7 @@ import rightArrow from '../../public/assets/images/rightArrow.svg'
 
 function HeroSection() {
   return (
-    <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 border border-black rounded-b-[50px]'>
+    <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 border border-black rounded-b-[40px]'>
 
       {/* jdhfkjdsh */}
       <div className="h-[400px] overflow-hidden relative rounded-b-[50px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
