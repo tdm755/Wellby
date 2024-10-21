@@ -24,7 +24,14 @@ function LoginModal({ isOpen, onClose }) {
 
   const handleConfirm = () => {
     setShowVerification(true);
-    setCountdown(120); // Reset countdown when verification part appears
+    setCountdown(120);
+  };
+
+  const handleChangeNumber = () => {
+    setShowVerification(false);
+    setMobileNumber('');
+    setOtp(['', '', '', '', '', '']);
+    setCountdown(120);
   };
 
   const handleOtpChange = (index, value) => {
@@ -37,7 +44,7 @@ function LoginModal({ isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="relative overflow-hidden" style={{ height: '450px' }}> {/* Adjust height as needed */}
+      <div className="relative overflow-hidden" style={{ height: '450px' }}>
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
@@ -48,7 +55,7 @@ function LoginModal({ isOpen, onClose }) {
           <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
           <div className="flex items-center mb-4 gap-2">
             <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
-              <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none">
+              <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
                 <option>+91</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -59,7 +66,7 @@ function LoginModal({ isOpen, onClose }) {
               <input
                 type="tel"
                 placeholder="ENTER YOUR MOBILE NUMBER"
-                className="w-full bg-white text-gray-700 rounded-md py-3 px-3 text-sm outline-none"
+                className="w-full bg-white text-gray-700 rounded-md py-3 px-3 text-sm outline-none h-12"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   setMobileNumber(value);
@@ -84,7 +91,10 @@ function LoginModal({ isOpen, onClose }) {
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
           <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Verify Number</h2>
           <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-3">OTP sent to +9</span>1 {mobileNumber}</p>
-          <button className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs">
+          <button 
+            className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs"
+            onClick={handleChangeNumber}
+          >
             CHANGE NUMBER? 
             <img src={ForwardIcon} alt="forward-icon" className="w-4 h-3 ml-2" />
           </button>
