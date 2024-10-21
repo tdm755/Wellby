@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../assets/images/default-background.png';
-import HamburgerMenu from '../../assets/icons/hamburger-menu.svg';
 import Sidebar from '../Components/Sidebar';
+import Header from '../Components/Header';
 
 function DefaultLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -12,7 +12,6 @@ function DefaultLayout({ children }) {
   };
 
   const handlers = useSwipeable({
-    // onSwipedRight: () => setIsSidebarOpen(true),
     onSwipedLeft: () => setIsSidebarOpen(false),
     trackMouse: true
   });
@@ -24,30 +23,7 @@ function DefaultLayout({ children }) {
         className="w-[425px] min-h-screen bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
-        <header className="absolute top-3 left-0 w-full z-10">
-          <div className="flex items-center">
-            <div className="p-5">
-              <img 
-                src={HamburgerMenu} 
-                alt="Menu" 
-                className="w-[25px] h-[30px] cursor-pointer" 
-                onClick={toggleSidebar}
-              />
-            </div>
-            {/* Header Patch */}
-            <div className="flex-grow p-5 h-[50px] flex justify-center items-center bg-[#002D3A] rounded-l-full ml-5">
-              <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.2rem] right-0" style={{
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
-              }}>               
-                
-              </div> 
-              <div className="w-[30px] h-[20px] bg-[#ffd502] absolute top-6 right-0" style={{
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
-              }}></div>
-                                         
-            </div> 
-          </div>
-        </header>
+        <Header toggleSidebar={toggleSidebar} />
 
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
