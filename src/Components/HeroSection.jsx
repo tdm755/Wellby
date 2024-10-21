@@ -32,7 +32,8 @@ function HeroSection() {
               backgroundSize: '20px 1px',
               backgroundRepeat: 'repeat-x'
             }}
-          ></div>
+           >
+          </div>
         </div>
         <div className="">
           <div className='flex gap-2'>
