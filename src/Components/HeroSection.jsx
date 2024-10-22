@@ -54,7 +54,7 @@ function HeroSection() {
   return (
     <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 border border-black rounded-b-[40px]'>
       {/* jdhfkjdsh */}
-      <div className="h-[400px] overflow-hidden relative rounded-b-[50px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
+      <div className="h-[400px] overflow-hidden relative rounded-b-[40px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
         <img className='w-[320px] ml-16' src={LogoInHeroSection} alt="" />
         <img className='absolute -bottom-4' src={HeroImage} alt="" />
       </div>
@@ -99,7 +99,7 @@ function HeroSection() {
             Instant Message
           </span>
           </p>
-          <button className='bg-gradient-to-t from-[#006E3C] to-[#5ade5e] w-24 rounded-full flex items-center justify-end px-4 py-2'><img className='w-7' src={rightArrow} alt="" /></button>
+          <button className='bg-gradient-to-t from-[#006E3C] to-[#32CC36] w-24 rounded-full flex items-center justify-end px-4 py-2'><img className='w-7' src={rightArrow} alt="" /></button>
           </div>
         </div>
       </div>

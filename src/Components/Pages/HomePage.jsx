@@ -25,11 +25,11 @@ import BlogComp from '../../Utils/blogComp.jsx'
 
 function HomePage() {
   return (
-    <div className='flex flex-col gap-12 items-center justify-center'>
+    <div className='flex flex-col gap- items-center justify-center'>
       <HeroSection />
 
 
-      <div className="w-full px-5">
+      <div className="w-full px-5 mt-12">
         <div className="w-full flex flex-col gap-4 items-center justify-center">
           <div className="flex flex-col gap-4 w-full items-center justify-center">
             <h3 className='flex gap-1 text-md font-semibold tracking-[0.20em] text-[#0F4254]  uppercase'>Find my details below <img className='w-3' src={AlertIcon} alt="" /></h3>
@@ -38,10 +38,10 @@ function HomePage() {
           <FormCompo
             title={'Personal Details'}
             inputs={[
-              <Input label="Company" type="text" icon={CompanyIcon} />,
-              <Input label="Employee ID" type="text" icon={EmployeeIDIcon} />,
-              <Input label="Nearby Landmark" type="text" icon={LocationIcon} />,
-              <Input label="City" type="text" icon={CityIcon} />
+              <Input label="Company" type="text" value={'Unilever'} icon={CompanyIcon} />,
+              <Input label="Employee ID" type="text" value={'129588'} icon={EmployeeIDIcon} />,
+              <Input label="Nearby Landmark" type="text" value={'Inorbit Mall, Goregaon'} icon={LocationIcon} />,
+              <Input label="City" type="text" value={'Mumbai'} icon={CityIcon} />
             ]}
           />
         </div>
@@ -49,14 +49,14 @@ function HomePage() {
       </div>
 
 
-      <div className="mt-32 w-full flex flex-col items-center gap-20  bg-[#EEEEEE] relative">
+      <div className="mt-52 w-full flex flex-col items-center gap-20  bg-[#EEEEEE] relative">
 
         {/* Blood Group Section And Medical Details */}
         <div className="flex flex-col items-center justify-center gap-4 absolute -top-24 w-full px-5">
           <h3 className='text-[22px] font-semibold text-[#0F4254]'>Prepare and Respond!</h3>
           <div className="flex gap-4 w-full">
             <div className="h-28  rounded-md shadow-xl bg-white w-full flex flex-col gap-1 items-center justify-center">
-              <p className='tracking-[0.20em] text-[#787878]'>BLOOD GROUP</p>
+              <p className='tracking-[0.20em] text-sm text-[#787878]'>BLOOD GROUP</p>
               <div className="h-1 w-[90%]">
                 <div
                   className="w-full h-full"
@@ -68,10 +68,10 @@ function HomePage() {
                 >
                 </div>
               </div>
-              <span className='text-4xl text-[#DC2A3C] font-semibold'>AB +ve</span>
+              <span className='text-3xl text-[#DC2A3C] font-semibold'>AB +ve</span>
             </div>
             <div className="h-28  rounded-md shadow-xl bg-white w-full flex flex-col gap-2 items-center justify-center">
-              <p className='tracking-[0.20em] text-[#787878]'>BLOOD GROUP</p>
+              <p className='tracking-[0.20em] text-sm text-[#787878]'>AMBULANCE</p>
               <div className="h-1 w-[90%]">
                 <div
                   className="w-full h-full"
@@ -83,7 +83,7 @@ function HomePage() {
                 >
                 </div>
               </div>
-              <span className='flex items-center justify-center gap-2 text-3xl'><img className='w-8' src={CallIcon} alt="" /> 102</span>
+              <span className='flex items-center justify-center gap-2 text-3xl font-semibold text-[#3C3C3C] jc'><img className='w-6 mt-1' src={CallIcon} alt="" /> 102</span>
             </div>
           </div>
         </div>
@@ -94,9 +94,9 @@ function HomePage() {
           <FormCompo
             title={'MEDICAL Details'}
             inputs={[
-              <Input label="Allergies" type="text" icon={AllergiesIcon} />,
-              <Input label="Medical Conditions" type="text" icon={MedicalConditionsIcon} />,
-              <Input label="Primary Physician" type="text" icon={PrimaryPhysician} icon2={CallIcon} />,
+              <Input label="Allergies" type="text" value={'Shellfish, Peanuts'} icon={AllergiesIcon} />,
+              <Input label="Medical Conditions" type="text" value={'High Blood Pressure'} icon={MedicalConditionsIcon} />,
+              <Input label="Primary Physician" type="text" value={'Dr. Shrikant Thakar'} icon={PrimaryPhysician} icon2={CallIcon} />,
             ]}
           />
 
@@ -114,9 +114,9 @@ function HomePage() {
               </div>
 
               <div className=" py-7 flex flex-col gap-7">
-                <Input label={'Mediclaim Company'} type='text' icon={MedCompany} />
-                <Input label={'Mediclaim-ID'} type='text' icon={PolicyRelationShipManager} />
-                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} icon2={CallIcon} />
+                <Input label={'Mediclaim Company'} type='text' value={'Manipal Cigna'} icon={MedCompany} />
+                <Input label={'Mediclaim-ID'} type='text' value={'5095491581'} icon={PolicyRelationShipManager} />
+                <Input label={'Policy Relationship Manager'} type='text' value={'Rajkumar Tiwari'} icon={MedID} icon2={CallIcon} />
               </div>
 
               <div className="flex flex-col px-2">
@@ -147,9 +147,9 @@ function HomePage() {
                 <button className='bg-[#32CC36] h-[26px] w-[70px] rounded-full flex items-center justify-end px-3 py-'><img className='w-4' src={rightArrow} alt="" /></button>
               </div>
               <div className=" py-7 flex flex-col gap-7">
-                <Input label={'Mediclaim Company'} type='text' icon={MedCompany} />
-                <Input label={'Mediclaim-ID'} type='text' icon={PolicyRelationShipManager} />
-                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} icon2={CallIcon} />
+                <Input label={'Mediclaim Company'} type='text' value={'Manipal Cigna'} icon={MedCompany} />
+                <Input label={'Mediclaim-ID'} type='text' value={'5095491581'} icon={PolicyRelationShipManager} />
+                <Input label={'Policy Relationship Manager'} type='text' value={'Rajkumar Tiwari'} icon={MedID} icon2={CallIcon} />
               </div>
 
               <div className="flex flex-col px-2">
@@ -165,31 +165,36 @@ function HomePage() {
 
 
         {/* Blog Section */}
-        <div className="w-full px-5">
-          <div className="pl-1">
-            <h2 className='text-[34px] text-[#FF3E4D] font-bold'>Helpful Resources</h2>
-            <p>Explore quick resources to respond to crises.</p>
+        <div className="w-full px-5 flex flex-col gap-3 ">
+          <div className="pl-1 leading-8">
+            <h2 className='text-[32px] text-[#FF3E4D] font-bold'>Helpful Resources</h2>
+            <p className='text-md'>Explore quick resources to respond to crises.</p>
           </div>
-          <div className="mt- flex flex-col gap-8">
+          <div className=" flex flex-col gap-8">
             <BlogComp />
             <BlogComp />
             <BlogComp />            
           </div>
         </div>
-         <div className="px-5 w-full">
+        
+      </div>
+
+      {/* Footer Section After Blog Part */}
+      <div className="bg-[#EEEEEE] pt-[77px] flex flex-col gap-11">
+      <div className="px-5 w-full">
          <FormCompo
             title={'Emergency Contacts'}
             inputs={[
-              <Input label="HR Manager" type="text" icon={HrManagerIcon} icon2={CallIcon} />,
-              <Input label="Safety Manager" type="text" icon={SafetyManager} icon2={CallIcon} />,
+              <Input label="HR Manager" type="text" value={'Jayesh Chakrobarty'} icon={HrManagerIcon} icon2={CallIcon} />,
+              <Input label="Safety Manager" type="text" value={'Roop Kumar Rathod'} icon={SafetyManager} icon2={CallIcon} />,
             ]}
           />
          </div>
           <div className="">
             <img src={AddImage} alt="" />
           </div>
-          <div className="w-full flex flex-col items-center justify-center mb-2 gap-2">
-            <img className='w-60' src={WellByLogo} alt="" />
+          <div className="w-full flex flex-col items-center justify-center mt-10 mb-2 gap-2">
+            <img className='w-56' src={WellByLogo} alt="" />
             <div className="h-1 flex items-center justify-center w-full">
               <div
                 className=" w-[90%] h-full"
