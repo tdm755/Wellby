@@ -20,7 +20,7 @@ function Dashboard() {
         <DashboardHeader />
 
         <div className="h-[467px] overflow-hidden relative rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
-          <img className="w-[347px]  mt-2" src={HeroImage} alt="" />
+          <img className="w-[347px]  mt-2 " src={HeroImage} alt="" />
         </div>
         <div className="mx-5 p-5 rounded-lg bg-white shadow-xl absolute top-[270px] left-0 right-0 flex flex-col gap-4">
 
