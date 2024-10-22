@@ -45,55 +45,55 @@ function Dashboard() {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <div className="bg-[#2C9E00] w-7 h-7 border rounded-full flex items-center justify-center"><img className="w-3" src={CheckIcon} alt="" /></div>
-               <span className="text-[#3C3C3C] font-semibold text-[15px]">Emergency Contact Verified</span>
+              <span className="text-[#3C3C3C] font-semibold text-[15px]">Emergency Contact Verified</span>
             </div>
-            <hr className="border  border-[#FF9E00]"/>
+            <hr className="border  border-[#FF9E00]" />
             <div className="flex items-center justify-between">
-               <div className="flex gap-2">
-                  <div className="bg-[#FF9E00] w-7 h-7 border rounded-full flex items-center justify-center"><img className="w-3" src={ProfileIcon} alt="" /></div>
-                  <span className="text-[#3C3C3C] font-semibold text-[15px] ">QR Profile Valid Till</span>
-               </div>
-               <span className="text-[#FF9E00] font-semibold text-[15px]">02, Sept 2025</span>
+              <div className="flex gap-2">
+                <div className="bg-[#FF9E00] w-7 h-7 border rounded-full flex items-center justify-center"><img className="w-3" src={ProfileIcon} alt="" /></div>
+                <span className="text-[#3C3C3C] font-semibold text-[15px] ">QR Profile Valid Till</span>
+              </div>
+              <span className="text-[#FF9E00] font-semibold text-[15px]">02, Sept 2025</span>
             </div>
           </div>
-         
+
         </div>
 
         <div className="px-5">
-        <div className="bg-white rounded-lg p-5 shadow-xl mt-28 mb-5 left-0 right-0 ">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
-              <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
-              <div className="flex flex-col">
-                <span className="text-[#FFA500] text-sm ">Company</span>
-                <span className="text-[#3C3C3C] font-medium text-[19px]">Unilever</span>
+          <div className="bg-white rounded-lg p-5 shadow-xl mt-28 mb-5 left-0 right-0 ">
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
+                <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
+                <div className="flex flex-col">
+                  <span className="text-[#FFA500] text-sm ">Company</span>
+                  <span className="text-[#3C3C3C] font-medium text-[19px]">Unilever</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
-              <img src={EmployeeIcon} alt="Employee ID" className="w-6 h-6" />
-              <div className="flex flex-col">
-                <span className="text-[#FFA500] text-sm ">Employee ID</span>
-                <span className="text-[#3C3C3C] font-medium text-[19px]">129588</span>
+              <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
+                <img src={EmployeeIcon} alt="Employee ID" className="w-6 h-6" />
+                <div className="flex flex-col">
+                  <span className="text-[#FFA500] text-sm ">Employee ID</span>
+                  <span className="text-[#3C3C3C] font-medium text-[19px]">129588</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <img src={LocationIcon} alt="Official Email ID" className="w-6 h-6" />
-              <div className="flex flex-col">
-                <span className="text-[#FFA500] text-sm">Official Email ID</span>
-                <span className="text-[#3C3C3C] font-medium text-[19px]">nitesh@unilever.com</span>
+              <div className="flex items-center gap-3">
+                <img src={LocationIcon} alt="Official Email ID" className="w-6 h-6" />
+                <div className="flex flex-col">
+                  <span className="text-[#FFA500] text-sm">Official Email ID</span>
+                  <span className="text-[#3C3C3C] font-medium text-[19px]">nitesh@unilever.com</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="">
-          <DashboardFormCompo
+          <div className="">
+            <DashboardFormCompo
               title={'Personal Details'}
               inputs={[
                 <input type="text" />,
                 <input type="text" />
               ]}
-           />
-        </div>
+            />
+          </div>
         </div>
 
 
@@ -101,22 +101,22 @@ function Dashboard() {
 
         <div className="border-b-2 border-[#FF9E00] my-10 mx-5"></div>
         <div className="w-full flex flex-col items-center justify-center mt-10 mb-2 gap-2">
-            <img className='w-56' src={WellByLogo} alt="" />
-            <div className="h-1 flex items-center justify-center w-full">
-              <div
-                className="w-[90%] h-full"
-                style={{
-                  backgroundImage: 'linear-gradient(to right, #A0A0A0 50%, transparent 50%)',
-                  backgroundSize: '10px 1.2px',
-                  backgroundRepeat: 'repeat-x'
-                }}
-              >
-              </div>
+          <img className='w-56' src={WellByLogo} alt="" />
+          <div className="h-1 flex items-center justify-center w-full">
+            <div
+              className="w-[90%] h-full"
+              style={{
+                backgroundImage: 'linear-gradient(to right, #A0A0A0 50%, transparent 50%)',
+                backgroundSize: '10px 1.2px',
+                backgroundRepeat: 'repeat-x'
+              }}
+            >
             </div>
-            <p className='text-xs md:text-sm'>Powered by: <span className='font-semibold'>Wellby Solutions Pvt. Ltd.</span></p>
+          </div>
+          <p className='text-xs md:text-sm'>Powered by: <span className='font-semibold'>Wellby Solutions Pvt. Ltd.</span></p>
         </div>
 
-          
+
       </div>
     </div>
   );
