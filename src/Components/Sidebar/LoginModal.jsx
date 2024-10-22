@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import DownIcon from '../../../public/assets/SVG/down-icon.svg'
 import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
 import Modal from '../../Utils/Modal';
+import { useNavigate } from 'react-router-dom';
 
 function LoginModal({ isOpen, onClose }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [showVerification, setShowVerification] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     let timer;
@@ -133,6 +136,7 @@ function LoginModal({ isOpen, onClose }) {
           </div>
           {isOtpComplete && (
             <button
+            onClick={()=>{navigate('dashboard')}}
               className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
             >
               Verify

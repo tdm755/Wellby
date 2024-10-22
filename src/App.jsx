@@ -1,12 +1,17 @@
 import React from 'react';
-import DefaultLayout from './components/DefaultLayout';
 import HomePage from './Components/Pages/HomePage';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './Components/Pages/Dashboard';
 
 function App() {
   return (
-    <DefaultLayout>
-      <HomePage />
-    </DefaultLayout>
+   
+
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+
+    </Routes>
   );
 }
 
