@@ -5,6 +5,9 @@ import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
 import LogoutIcon from "../../../public/assets/SVG/logout-icon.svg";
 import CheckIcon from "../../../public/assets/images/CheckIcon.svg";
 import ProfileIcon from "../../../public/assets/images/ProfileIcon.svg";
+import BuildingIcon from "../../../public/assets/SVG/building-icon.svg";
+import EmployeeIcon from "../../../public/assets/SVG/employee-icon.svg";
+import LocationIcon from "../../../public/assets/SVG/location-icon.svg";
 
 function Dashboard() {
   return (
@@ -50,7 +53,32 @@ function Dashboard() {
                <span className="text-[#FF9E00] font-semibold">02, Sept 2025</span>
             </div>
           </div>
-          
+         
+        </div>
+        <div className="bg-white rounded-lg p-5 shadow-xl mt-44 mb-5 left-0 right-0 mx-5">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
+              <div className="flex flex-col">
+                <span className="text-[#FFA500] text-sm font-semibold">Company</span>
+                <span className="text-[#3C3C3C] font-bold">Unilever</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src={EmployeeIcon} alt="Employee ID" className="w-6 h-6" />
+              <div className="flex flex-col">
+                <span className="text-[#FFA500] text-sm font-semibold">Employee ID</span>
+                <span className="text-[#3C3C3C] font-bold">129588</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src={LocationIcon} alt="Official Email ID" className="w-6 h-6" />
+              <div className="flex flex-col">
+                <span className="text-[#FFA500] text-sm font-semibold">Official Email ID</span>
+                <span className="text-[#3C3C3C] font-bold">nitesh@unilever.com</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
