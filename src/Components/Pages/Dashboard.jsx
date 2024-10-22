@@ -86,7 +86,7 @@ function Dashboard() {
           <div className="">
             <DashboardFormCompo
               title={'Personal Details'}
-              path={'personaldetails'}
+              path={'/personaldetails'}
               inputs={[
                 <input type="text" />,
                 <input type="text" />
