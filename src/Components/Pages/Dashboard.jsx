@@ -90,8 +90,9 @@ function Dashboard() {
               path={'personaldetails'}
               inputs={[
                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-                <DashboardInputs label={'Mobile'} type={'number'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Mobile'} type={'number'} value={9384754535} readOnlyOf={true} />,
                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={''} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
               ]}
             />
           </div>

@@ -1,4 +1,6 @@
 import React from 'react'
+import DownIcon from '../../public/assets/SVG/down-icon.svg'
+
 
 function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
 
@@ -9,11 +11,18 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
 
         <label className='bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
 
-        <div className="">
-          <select name="" id=""></select>
+        <div className="flex gap-2">
+        <div className="rounded-md relative">
+              <select className={`outline-none font-medium text-[19px] appearance-none text-[#787878] pl-3 pr-7 rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`}>
+                <option>+91</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#787878]">
+                <img src={DownIcon} alt="down-icon" className="w-[9px]" />
+              </div>
+            </div>
           <input className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
         </div>
-        
+
       </div>
     )
   }
