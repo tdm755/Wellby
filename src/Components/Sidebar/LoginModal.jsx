@@ -105,7 +105,7 @@ function LoginModal({ isOpen, onClose }) {
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-10 h-10 text-center border rounded-md outline-none shadow-[0_0_4px_rgba(0,0,0,0.1)]"
+                className="w-10 h-10 text-center rounded-md outline-none shadow-[0_0_8px_rgba(0,0,0,0.2)]"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);
@@ -119,9 +119,9 @@ function LoginModal({ isOpen, onClose }) {
                     e.target.previousSibling.focus();
                   }
                 }}
-                onFocus={(e) => e.target.style.borderColor = '#1DC63C'}
-                onBlur={(e) => e.target.style.borderColor = e.target.value ? '#1DC63C' : ''}
-                style={{ borderColor: digit ? '#1DC63C' : '' }}
+                onFocus={(e) => e.target.style.border = '1px solid #1DC63C'}
+                onBlur={(e) => e.target.style.border = e.target.value ? '1px solid #1DC63C' : 'none'}
+                style={{ border: digit ? '1px solid #1DC63C' : 'none' }}
               />
             ))}
           </div>
