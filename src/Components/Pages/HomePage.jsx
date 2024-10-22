@@ -69,7 +69,7 @@ function HomePage() {
 
           <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
             {isSidebarOpen && (
-              <div className="absolute inset-0 bg-black opacity-50 z-20" onClick={() => setIsSidebarOpen(false)} />
+              <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
             )}
 
 
