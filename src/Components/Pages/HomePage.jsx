@@ -62,7 +62,7 @@ function HomePage() {
     <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
       <div 
         {...handlers}
-        className={`w-[400px] min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
+        className={`w-[400px] flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
         <Header toggleSidebar={toggleSidebar} />
