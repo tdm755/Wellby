@@ -1,5 +1,4 @@
 import React from "react";
-import DefaultBackground from "../../../public/assets/images/default-background.png";
 import DashboardHeader from "../Header/DashboardHeader";
 import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
 import LogoutIcon from "../../../public/assets/SVG/logout-icon.svg";
@@ -14,8 +13,7 @@ function Dashboard() {
   return (
     <div className="min-h-screen bg-black flex justify-center">
       <div
-        className="w-[400px] relative"
-        style={{ backgroundImage: `url(${DefaultBackground})` }}
+        className="w-[400px] relative bg-[#EEEEEE]"
       >
         <DashboardHeader />
         <div className="h-[467px] overflow-hidden relative rounded-b-[40px] pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
@@ -58,18 +56,40 @@ function Dashboard() {
         </div>
         <div className="bg-white rounded-lg p-5 shadow-xl mt-28 mb-5 left-0 right-0 mx-5">
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
+            <div className="flex items-center gap-3">
               <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
               <div className="flex flex-col">
                 <span className="text-[#FFA500] text-sm ">Company</span>
                 <span className="text-[#3C3C3C] font-medium text-[19px]">Unilever</span>
               </div>
             </div>
-            <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
+            <div className="h-1 flex items-center justify-center w-full">
+              <div
+                className="w-[100%] h-full"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, #A0A0A0 50%, transparent 50%)',
+                  backgroundSize: '10px 1.2px',
+                  backgroundRepeat: 'repeat-x'
+                }}
+              >
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
               <img src={EmployeeIcon} alt="Employee ID" className="w-6 h-6" />
               <div className="flex flex-col">
                 <span className="text-[#FFA500] text-sm ">Employee ID</span>
                 <span className="text-[#3C3C3C] font-medium text-[19px]">129588</span>
+              </div>
+            </div>
+            <div className="h-1 flex items-center justify-center w-full">
+              <div
+                className="w-[100%] h-full"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, #A0A0A0 50%, transparent 50%)',
+                  backgroundSize: '10px 1.2px',
+                  backgroundRepeat: 'repeat-x'
+                }}
+              >
               </div>
             </div>
             <div className="flex items-center gap-3">
