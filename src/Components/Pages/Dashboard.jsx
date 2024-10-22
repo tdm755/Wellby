@@ -1,6 +1,6 @@
 import React from "react";
 import DefaultBackground from "../../../public/assets/images/default-background.png";
-import Header from "../Header";
+import DashboardHeader from "../Header/DashboardHeader";
 import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
 import LogoutIcon from "../../../public/assets/SVG/logout-icon.svg";
 import CheckIcon from "../../../public/assets/images/CheckIcon.svg";
@@ -12,7 +12,7 @@ function Dashboard() {
         className="w-[400px] relative"
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
-        <Header />
+        <DashboardHeader />
         <div className="h-[400px] overflow-hidden relative rounded-b-[40px] pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
           <img className="" src={HeroImage} alt="" />
         </div>
