@@ -41,11 +41,11 @@ function DefaultLayout({ children }) {
 
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
-        {/* <div className={`relative z-10 ${isSidebarOpen ? 'opacity-50' : ''}`}>
+        <div className={`relative z-10 ${isSidebarOpen ? 'opacity-50' : ''}`}>
           {children}          
-        </div> */}
+        </div>
 
-        <HomePage />
+        {/* <HomePage /> */}
 
         
 
