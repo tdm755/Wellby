@@ -14,7 +14,7 @@ function Dashboard() {
         style={{ backgroundImage: `url(${DefaultBackground})` }}
       >
         <DashboardHeader />
-        <div className="h-[400px] overflow-hidden relative rounded-b-[40px] pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
+        <div className="h-[467px] overflow-hidden relative rounded-b-[40px] pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
           <img className="" src={HeroImage} alt="" />
         </div>
         <div className="mx-5 p-5 rounded-lg bg-white shadow-xl absolute top-[270px] left-0 right-0 flex flex-col gap-4">
@@ -26,7 +26,7 @@ function Dashboard() {
           <div className=" flex flex-col gap-2">
             <div className="">
               <span className="text-[#3C3C3C] font-semibold">Welcome,</span>
-              <h3 className="font-bold text-[22px] text-[#FF9E00]">Nitesh Rajkumar Rathod</h3>
+              <h3 className="font-bold text-[21px] text-[#FF9E00]">Nitesh Rajkumar Rathod</h3>
             </div>
             <div className="">
               <p className="text-[#787878] text-sm">Looks like your contact has verified as your
@@ -39,15 +39,15 @@ function Dashboard() {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <div className="bg-[#2C9E00] w-7 h-7 border rounded-full flex items-center justify-center"><img className="w-3" src={CheckIcon} alt="" /></div>
-               <span className="text-[#3C3C3C] font-semibold">Emergency Contact Verified</span>
+               <span className="text-[#3C3C3C] font-semibold text-[15px]">Emergency Contact Verified</span>
             </div>
             <hr className="border  border-[#FF9E00]"/>
             <div className="flex items-center justify-between">
                <div className="flex gap-2">
                   <div className="bg-[#FF9E00] w-7 h-7 border rounded-full flex items-center justify-center"><img className="w-3" src={ProfileIcon} alt="" /></div>
-                  <span className="text-[#3C3C3C] font-semibold">QR Profile Valid Till</span>
+                  <span className="text-[#3C3C3C] font-semibold text-[15px] ">QR Profile Valid Till</span>
                </div>
-               <span className="text-[#FF9E00] font-semibold">02, Sept 2025</span>
+               <span className="text-[#FF9E00] font-semibold text-[15px]">02, Sept 2025</span>
             </div>
           </div>
           
