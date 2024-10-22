@@ -9,6 +9,7 @@ import BuildingIcon from "../../../public/assets/SVG/building-icon.svg";
 import EmployeeIcon from "../../../public/assets/SVG/employee-icon.svg";
 import LocationIcon from "../../../public/assets/SVG/location-icon.svg";
 import WellByLogo from "../../../public/assets/images/WellByLogo.png";
+import DashboardInputs from "../../Utils/DashboardInputs";
 
 function Dashboard() {
   return (
@@ -88,8 +89,9 @@ function Dashboard() {
               title={'Personal Details'}
               path={'personaldetails'}
               inputs={[
-                <input type="text" />,
-                <input type="text" />
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Mobile'} type={'number'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
               ]}
             />
           </div>

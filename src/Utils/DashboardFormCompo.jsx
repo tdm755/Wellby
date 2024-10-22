@@ -13,9 +13,12 @@ function DashboardFormCompo({title, inputs, path}) {
 
   return (
     <div className='w-full border rounded-lg bg-white shadow-xl'>
-      <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg tracking-[0.20em] flex items-center justify-center font-semibold text-white text-md uppercase shadow-lg">
+
+      <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
         <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'> {title}</span>
-        <img onClick={()=>{navigate(path)}} className='w-7' src={EditIcon} alt="" /></div>
+        <img onClick={()=>{navigate(path)}} className='w-6' src={EditIcon} alt="" />
+      </div>
+
       <div className="px-4 py-7 flex flex-col gap-7">
       {inputs.length > 0 && inputs.map((item)=>{
         return item;
