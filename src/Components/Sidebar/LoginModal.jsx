@@ -122,9 +122,9 @@ function LoginModal({ isOpen, onClose }) {
                     e.target.previousSibling.focus();
                   }
                 }}
-                onFocus={(e) => e.target.style.border = '1px solid #1DC63C'}
-                onBlur={(e) => e.target.style.border = e.target.value ? '1px solid #1DC63C' : 'none'}
-                style={{ border: digit ? '1px solid #1DC63C' : 'none' }}
+                onFocus={(e) => e.target.style.border = '1.5px solid #1DC63C'}
+                onBlur={(e) => e.target.style.border = e.target.value ? '1.5px solid #1DC63C' : 'none'}
+                style={{ border: digit ? '1.5px solid #1DC63C' : 'none' }}
               />
             ))}
           </div>
