@@ -14,7 +14,7 @@ function Sidebar({ isOpen, onClose }) {
   return (
     <>
       <div 
-        className={`fixed top-0 z-50 h-full w-[340px] bg-[#FF3E4D] transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 z-50 bottom-0  w-[300px] bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto ${
           isOpen ? 'left-0' : ' -left-[350px]'
         } flex flex-col`}
       >
@@ -27,14 +27,14 @@ function Sidebar({ isOpen, onClose }) {
             onClick={onClose}
           />
         </div>
-        <div className="flex-grow relative overflow-y-auto">
+        <div className="flex flex-col items-center justify-evenly gap-20 mt-14 ">
           <img 
             src={SidebarImage} 
             alt="Sidebar" 
-            className="absolute top-[10%] left-0 w-full h-auto"
+            className="w-full"
           />
           {/* Login */}
-          <div className="absolute top-[60%] left-0 w-[90%] px-4 mx-4">
+          <div className="w-[90%] px-4 mx-4">
             <h2 className="text-white text-sm font-bold mb-2 border-b border-white pb-1">Manage your Account</h2>
             <div className="text-white text-sm mb-4 font-bold">
               Login to your <span className="text-[#FFCB05] font-bold">WellbyQR<br />Emergency Assistance</span> Account<br />to update your details.
