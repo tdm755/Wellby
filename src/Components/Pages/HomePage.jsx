@@ -16,12 +16,16 @@ import CompanyPoliciesIcon from '../../../public/assets/images/CompanyPoliciesIc
 import MedCompany from '../../../public/assets/images/MedCom.svg'
 import MedID from '../../../public/assets/images/MedID.svg'
 import PolicyRelationShipManager from '../../../public/assets/images/PolicyRelationShipManager.svg'
+import HrManagerIcon from '../../../public/assets/images/HrManagerIcon.svg'
+import SafetyManager from '../../../public/assets/images/SafetyManager.svg'
+import AddImage from '../../../public/assets/images/AddImage.png'
+import WellByLogo from '../../../public/assets/images/WellByLogo.png'
 import BlogComp from '../../Utils/blogComp.jsx'
 
 
 function HomePage() {
   return (
-    <div className='flex flex-col gap-12 mb-28 items-center justify-center'>
+    <div className='flex flex-col gap-12 items-center justify-center'>
       <HeroSection />
 
 
@@ -45,7 +49,7 @@ function HomePage() {
       </div>
 
 
-      <div className="mt-32 w-full flex flex-col items-center px-5 bg-[#EEEEEE] relative">
+      <div className="mt-32 w-full flex flex-col items-center gap-20  bg-[#EEEEEE] relative">
 
         {/* Blood Group Section And Medical Details */}
         <div className="flex flex-col items-center justify-center gap-4 absolute -top-24 w-full px-5">
@@ -85,14 +89,14 @@ function HomePage() {
         </div>
 
         {/* Mediclaim Policies */}
-        <div className="w-full flex flex-col gap-24 mt-[90px] mb-28">
+        <div className="w-full flex flex-col gap-20 mt-[90px] px-5">
 
           <FormCompo
             title={'MEDICAL Details'}
             inputs={[
               <Input label="Allergies" type="text" icon={AllergiesIcon} />,
               <Input label="Medical Conditions" type="text" icon={MedicalConditionsIcon} />,
-              <Input label="Primary Physician" type="text" icon={PrimaryPhysician} />,
+              <Input label="Primary Physician" type="text" icon={PrimaryPhysician} icon2={CallIcon} />,
             ]}
           />
 
@@ -112,7 +116,7 @@ function HomePage() {
               <div className=" py-7 flex flex-col gap-7">
                 <Input label={'Mediclaim Company'} type='text' icon={MedCompany} />
                 <Input label={'Mediclaim-ID'} type='text' icon={PolicyRelationShipManager} />
-                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} />
+                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} icon2={CallIcon} />
               </div>
 
               <div className="flex flex-col px-2">
@@ -145,7 +149,7 @@ function HomePage() {
               <div className=" py-7 flex flex-col gap-7">
                 <Input label={'Mediclaim Company'} type='text' icon={MedCompany} />
                 <Input label={'Mediclaim-ID'} type='text' icon={PolicyRelationShipManager} />
-                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} />
+                <Input label={'Policy Relationship Manager'} type='text' icon={MedID} icon2={CallIcon} />
               </div>
 
               <div className="flex flex-col px-2">
@@ -161,17 +165,44 @@ function HomePage() {
 
 
         {/* Blog Section */}
-        <div className="w-full">
+        <div className="w-full px-5">
           <div className="pl-1">
             <h2 className='text-[34px] text-[#FF3E4D] font-bold'>Helpful Resources</h2>
             <p>Explore quick resources to respond to crises.</p>
           </div>
-          <div className="mt-5 flex flex-col gap-8">
+          <div className="mt- flex flex-col gap-8">
             <BlogComp />
             <BlogComp />
             <BlogComp />            
           </div>
         </div>
+         <div className="px-5 w-full">
+         <FormCompo
+            title={'Emergency Contacts'}
+            inputs={[
+              <Input label="HR Manager" type="text" icon={HrManagerIcon} icon2={CallIcon} />,
+              <Input label="Safety Manager" type="text" icon={SafetyManager} icon2={CallIcon} />,
+            ]}
+          />
+         </div>
+          <div className="">
+            <img src={AddImage} alt="" />
+          </div>
+          <div className="w-full flex flex-col items-center justify-center mb-2 gap-2">
+            <img className='w-60' src={WellByLogo} alt="" />
+            <div className="h-1 flex items-center justify-center w-full">
+              <div
+                className=" w-[90%] h-full"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, #A0A0A0 50%, transparent 50%)',
+                  backgroundSize: '10px 1.2px',
+                  backgroundRepeat: 'repeat-x'
+                }}
+              >
+              </div>
+            </div>
+            <p className='text-sm'>Powered by: <span className='font-semibold'>Wellby Solutions Pvt. Ltd.</span></p>
+          </div>
       </div>
 
     </div>
