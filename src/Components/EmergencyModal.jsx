@@ -7,7 +7,7 @@ function EmergencyModal({ isOpen, onClose }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [showVerification, setShowVerification] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
-  const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
+  const [countdown, setCountdown] = useState(120); 
 
   useEffect(() => {
     let timer;
