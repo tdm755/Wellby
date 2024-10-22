@@ -43,7 +43,7 @@ function LoginModal({ isOpen, onClose }) {
   const isOtpComplete = otp.every(digit => digit !== '');
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} showHeader={false}>
       <div className="relative overflow-hidden" style={{ height: '400px' }}>
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
