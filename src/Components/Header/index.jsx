@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Logo from '../../../public/logo.svg'
 import HamburgerMenu from '../../../public/assets/icons/hamburger-menu.svg';
 
 function Header({ toggleSidebar }) {
