@@ -63,7 +63,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
         )}
 
-        <HeroSection />
+        <HeroSection />          
 
         {/* UserDetails */}
         <div className="w-full px-5 mt-12">
