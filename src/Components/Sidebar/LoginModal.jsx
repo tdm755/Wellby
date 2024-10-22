@@ -44,7 +44,7 @@ function LoginModal({ isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="relative overflow-hidden" style={{ height: '450px' }}>
+      <div className="relative overflow-hidden" style={{ height: '400px' }}>
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
@@ -53,7 +53,7 @@ function LoginModal({ isOpen, onClose }) {
             <span className="border-b border-[#FFA500] pb-2">Enter your reg</span>istered mobile number
           </p>
           <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
-          <div className="flex items-center mb-4 gap-2">
+          <div className="flex items-center mb-4 gap-2 mx-1">
             <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
               <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
                 <option>+91</option>
@@ -98,14 +98,14 @@ function LoginModal({ isOpen, onClose }) {
             CHANGE NUMBER? 
             <img src={ForwardIcon} alt="forward-icon" className="w-4 h-3 ml-2" />
           </button>
-          <div className="flex gap-2 mb-3 mt-4">
+          <div className="flex justify-between mb-3 mt-4 mx-1">
             {otp.map((digit, index) => (
               <input
                 key={index}
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-12 h-12 text-center border rounded-md outline-none shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)]"
+                className="w-10 h-10 text-center border rounded-md outline-none shadow-[0_0_4px_rgba(0,0,0,0.1)]"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);
