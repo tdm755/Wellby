@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import DownIcon from '../../../public/assets/SVG/down-icon.svg'
-import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
-import Modal from '../../Utils/Modal';
+import DownIcon from '../../public/assets/SVG/down-icon.svg'
+import ForwardIcon from '../../public/assets/SVG/forward-arrow-icon.svg'
+import Modal from '../Utils/Modal';
 
-function LoginModal({ isOpen, onClose }) {
+function EmergencyModal({ isOpen, onClose }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [showVerification, setShowVerification] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
@@ -48,11 +48,12 @@ function LoginModal({ isOpen, onClose }) {
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
-          <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Welcome</h2>
+          <h2 className="text-4xl text-[#FFA500]  mt-14">Verify your</h2>
+          <h2 className="text-4xl text-[#FFA500] ">mobile number</h2>
           <p className="text-md mb-4 font-bold">
-            <span className="border-b border-[#FFA500] pb-2">Enter your reg</span>istered mobile number
+            <span className="border-b border-[#FFA500] pb-2">to call my Em</span>ergency Contacts
           </p>
-          <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
+          <p className="text-[0.85rem] mb-4 text-[#787878]">Your details are secured and will not be shared with the<span className="font-bold"> Emergency Contacts.</span></p>
           <div className="flex items-center mb-4 gap-2 mx-1">
             <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
               <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
@@ -89,10 +90,11 @@ function LoginModal({ isOpen, onClose }) {
         {/* verification part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
-          <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Verify Number</h2>
-          <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-3">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-3'>+9</span>1 {mobileNumber}</span></p>
+          <h2 className="text-4xl text-[#FFA500]  mt-14">Enter</h2>
+          <h2 className="text-4xl text-[#FFA500] ">Verification Code</h2>
+          <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-1">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-1'>+9</span>1 {mobileNumber}</span></p>
           <button 
-            className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs"
+            className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-10 flex items-center text-xs"
             onClick={handleChangeNumber}
           >
             CHANGE NUMBER? 
@@ -144,4 +146,4 @@ function LoginModal({ isOpen, onClose }) {
   );
 }
 
-export default LoginModal;
+export default EmergencyModal;
