@@ -66,7 +66,7 @@ function Dashboard() {
         </div>
 
 
-        <div className="px-5">
+        <div className="px-5 mb-24">
           <div className="bg-white rounded-lg p-5 shadow-xl mt-20 left-0 right-0 ">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
@@ -124,49 +124,60 @@ function Dashboard() {
 
               <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Primary Emergency Contact</h4>
               <div className={`px-4 flex flex-col gap-5`}>
-                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
-                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
               </div>
               <div className="flex items-center justify-center"><hr className="border mt-6 mb-6 border-[#C8C8C8] w-[90%]" /></div>
               <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Secondary Emergency Contact</h4>
               <div className={`px-4 pb-7 flex flex-col gap-5`}>
-                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
-                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
               </div>
             </div>
           </div>
 
           {/* Medical Details */}
-           <div className="mt-12">
+          <div className="mt-12">
             <DashboardFormCompo
               title={'Medical Details'}
               path={'/medicaldetails'}
               inputs={[
-                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-               ]}
+                <DashboardInputs label={'Family Physician Name'} type={'text'} value={'Akshay Sinha'} readOnlyOf={true} />,
+                <DashboardInputs label={'Family Physician Number'} type={'number'} value={9820485536} readOnlyOf={true} />,
+                <DashboardInputs label={'Blood Group'} type={'text'} value={'O +ve'} readOnlyOf={true} />,
+                <DashboardInputs label={'Allergies (If any)'} type={'text'} value={'Pepper, Peanuts'} readOnlyOf={true} />,
+                <DashboardInputs label={'Medical Conditions (If any)'} type={'text'} value={'High Blood Pressure'} readOnlyOf={false} />,
+              ]}
             />
           </div>
 
 
-
-           {/* Mediclaim Policies */}
-           <div className="mt-12">
+          {/* Mediclaim Policies */}
+          <div className="mt-12">
             <div className='w-full border rounded-lg bg-white shadow-xl'>
               <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
                 <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>Mediclaim Policies</span>
                 <img onClick={() => { navigate('/mediclaimpolicies') }} className='w-6' src={EditIcon} alt="" />
               </div>
 
-              <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Primary Emergency Contact</h4>
+              <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Corporate Mediclaim Policy</h4>
               <div className={`px-4 flex flex-col gap-5`}>
-                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
-                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+                <DashboardInputs label={'Mediclaim Company'} type={'text'} value={'Manipal Cigna'} readOnlyOf={true} />
+                <DashboardInputs label={'Mediclaim Policy No'} type={'num'} value={5095491581} readOnlyOf={true} />
+                <DashboardInputs label={'Corporate Policy Expiry Date'} type={'text'} value={'27, January 2025'} readOnlyOf={true} />
+                <DashboardInputs label={'Policy Relationship Manager Name'} type={'text'} value={'Rajkumar Tiwari'} readOnlyOf={true} />
+                <DashboardInputs label={'Policy Relationship Manager Mobile'} type={'number'} value={9820485536} readOnlyOf={true} />
+                <DashboardInputs label={'Corporate Policy Toll Free Number'} type={'num'} value={18004259449} readOnlyOf={true} />
               </div>
               <div className="flex items-center justify-center"><hr className="border mt-6 mb-6 border-[#C8C8C8] w-[90%]" /></div>
-              <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Secondary Emergency Contact</h4>
+              <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Personal Mediclaim Policy</h4>
               <div className={`px-4 pb-7 flex flex-col gap-5`}>
-                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
-                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+                <DashboardInputs label={'Mediclaim Company'} type={'text'} value={'Manipal Cigna'} readOnlyOf={true} />
+                <DashboardInputs label={'Mediclaim Policy No'} type={'num'} value={5095491581} readOnlyOf={true} />
+                <DashboardInputs label={'Corporate Policy Expiry Date'} type={'text'} value={'27, January 2025'} readOnlyOf={true} />
+                <DashboardInputs label={'Policy Relationship Manager Name'} type={'text'} value={'Rajkumar Tiwari'} readOnlyOf={true} />
+                <DashboardInputs label={'Policy Relationship Manager Mobile'} type={'number'} value={9820485536} readOnlyOf={true} />
+                <DashboardInputs label={'Corporate Policy Toll Free Number'} type={'num'} value={18004259449} readOnlyOf={true} />
               </div>
             </div>
           </div>
@@ -177,7 +188,7 @@ function Dashboard() {
         </div>
 
 
-        
+
         <div className="w-full flex flex-col items-center justify-center mt-10 mb-2 gap-2">
           <img className='w-56' src={WellByLogo} alt="" />
           <div className="h-1 flex items-center justify-center w-full">
