@@ -33,7 +33,7 @@ function PersonalDetails() {
               </h1>
             </div>
             <div className="border-b-2 border-[#FF9E00] -mt-1"></div>
-            <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} />
+            <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} />
           </div>
         </div>
         <div className="w-full flex flex-col items-center justify-center gap-2 absolute bottom-0 left-0 right-0 mb-2">
