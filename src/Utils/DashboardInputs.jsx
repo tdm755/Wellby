@@ -48,7 +48,9 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
             className={`outline-none font-medium text-[19px] appearance-none text-[#000] pl-3 pr-7 w-full rounded-[4px] py-2 border border-[#E0E0E0] ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-white border border-[#C8C8C8]'}`}
             value={value}
             disabled={readOnlyOf}
+            onChange={onChange}
           >
+            <option value="" disabled hidden>{placeholder}</option>
             {options && options.map((option, index) => (
               <option key={index} value={option.value || option}>{option.label || option}</option>
             ))}

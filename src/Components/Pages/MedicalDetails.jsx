@@ -13,13 +13,12 @@ function MedicalDetails() {
       pageTitle="MEDICAL DETAILS"
       backPath="/dashboard"  // This will make the back button go to the profile page
     >
-      <div className="text-md font-medium text-[#3C3C3C]">Primary Emergency Contact</div>
-      <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} placeholder={'ADD PRIMARY NAME'}/>
-      <DashboardInputs label="Mobile" type="number" readOnlyOf={true} value={'9820485536'} placeholder={'ADD PRIMARY MOBILE'} />
-      <div className="border-b border-[#C8C8C8] my-4"></div>
-      <div className="text-md font-medium text-[#3C3C3C]">Secondary Emergency Contact</div>
-      <DashboardInputs label="Full Name" type="text" placeholder={'ADD SECONDARY NAME'} />
-      <DashboardInputs label="Mobile" type="number" placeholder={'ADD SECONDARY MOBILE'} />
+       <div className="my-1"></div>
+      <DashboardInputs label="Family Physician Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} placeholder={'ADD PRIMARY NAME'}/>
+      <DashboardInputs label="Family Physician Mobile" type="number" readOnlyOf={true} value={'9820485536'} placeholder={'ADD PRIMARY MOBILE'} />
+      <DashboardInputs label="Blood Group" type="select" options={['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']} placeholder={'ADD YOUR BLOOD GROUP'}/>
+      <DashboardInputs label="Allergies(if any)" type="text" placeholder={'ADD ALLERGIES'}/>  
+      <DashboardInputs label="Medical Conditions(if any)" type="text" placeholder={'ADD MEDICAL CONDITIONS'}/>  
       <div className="my-4"></div>
       <ActionButtons onCancel={() => {}} onSave={() => {}} />
     </PageContentWrapper>
