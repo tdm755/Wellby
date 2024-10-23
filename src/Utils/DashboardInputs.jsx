@@ -10,7 +10,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
       <div className='flex flex-col gap-[2px]'>
 
           <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
-          <textarea className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
+          <textarea className={`outline-none font-medium text-[17px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
         
     </div>
     )
@@ -31,7 +31,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
                 <img src={DownIcon} alt="down-icon" className="w-[9px]" />
               </div>
             </div>
-          <input className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
+          <input className={`outline-none font-medium text-[17px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type === 'num' ? 'number' : type} value={value} readOnly={readOnlyOf} />
         </div>
 
       </div>
@@ -41,7 +41,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
   return (
     <div className='flex flex-col gap-[2px]'>
       <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
-      <input className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
+      <input className={`outline-none font-medium text-[17px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
       {/* <img className='w-6 h-6 absolute top-3 left-3' src={icon} alt="" /> */}
       {/* {icon2 && <img className='cursor-pointer w-6 h-6 absolute top-3 right-3' src={icon2} alt="" />} */}
     </div>
