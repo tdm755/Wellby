@@ -54,7 +54,7 @@ function DashboardHeader() {
               <img
                 src={LogoutIcon}
                 alt="Logout"
-                className="w-8 h-8 cursor-pointer"
+                className="w-7 cursor-pointer"
                 onClick={() => {/* Add logout functionality */}}
               />
             </div>
