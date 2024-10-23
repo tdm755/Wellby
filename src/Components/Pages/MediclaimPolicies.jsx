@@ -3,27 +3,36 @@ import DashboardInputs from "../../Utils/DashboardInputs";
 import PageContentWrapper from "../../Utils/PageContentWrapper";
 import ActionButtons from "../../Utils/ActionButtons";
 
-function EmergencyContacts() {
+function MediclaimPolicies() {
   return (
     <PageContentWrapper
       breadcrumbs={[
         { label: "My Profile", link: "/dashboard" },
-        { label: "Emergency Contacts", link: "/emergencycontacts", active: true },
+        { label: "Mediclaim Policies", link: "/mediclaimpolicies", active: true },
       ]}
-      pageTitle="EMERGENCY CONTACTS"
-      backPath="/dashboard"  // This will make the back button go to the profile page
+      pageTitle="MEDICLAIM POLICIES"
+      backPath="/dashboard"
     >
-      <div className="text-md font-medium text-[#3C3C3C]">Primary Emergency Contact</div>
-      <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} placeholder={'ADD PRIMARY NAME'}/>
-      <DashboardInputs label="Mobile" type="number" readOnlyOf={true} value={'9820485536'} placeholder={'ADD PRIMARY MOBILE'} />
-      <div className="border-b border-[#C8C8C8] my-4"></div>
-      <div className="text-md font-medium text-[#3C3C3C]">Secondary Emergency Contact</div>
-      <DashboardInputs label="Full Name" type="text" placeholder={'ADD SECONDARY NAME'} />
-      <DashboardInputs label="Mobile" type="number" placeholder={'ADD SECONDARY MOBILE'} />
-      <div className="my-4"></div>
-      <ActionButtons onCancel={() => {}} onSave={() => {}} />
+        <div className="space-y-6">
+            <h2 className="text-md font-medium ">Corporate Mediclaim Policy</h2>
+        
+            <DashboardInputs label="Mediclaim Company" type="text" value={'Manipal Cigna'}/>
+            <DashboardInputs label="Mediclaim Policy No" type="text" value={'6697131448383468-7891'} placeholder={'ADD POLICY NO.'}/>    
+            <DashboardInputs label="Corporate Policy Expiry Date" type="date" value={'2026-10-22'} placeholder={'ADD POLICY EXPIRY DATE'}/>        
+            <DashboardInputs label="Policy Relationship Manager Name" type="text" placeholder="Enter Manager Name" value={'Ramesh Chauhan'}/>
+            <DashboardInputs label="Policy Relationship Manager Mobile" type="number" placeholder="Enter Manager Mobile" value={'9820485536'}/>
+            <DashboardInputs label="Corporate Policy Toll Free Number" type="text" placeholder="Enter Toll Free Number" value={'1800594336'}/>        
+            <h2 className="text-md font-medium ">Personal Mediclaim Policy</h2>        
+            <DashboardInputs label="Mediclaim Company" type="text" placeholder="ADD COMPANY NAME" />           
+            <DashboardInputs label="Mediclaim Policy No" type="text" placeholder="ADD POLICY NO." />        
+            <DashboardInputs label="Corporate Policy Expiry Date" type="date" placeholder="ADD POLICY EXPIRY DATE"/>        
+            <DashboardInputs label="Policy Relationship Manager Name" type="text" placeholder="ADD MANAGER NAME"/>          
+            <DashboardInputs label="Policy Relationship Manager Mobile" type="number" placeholder="ADD MANAGER MOBILE"/>        
+            <DashboardInputs label="Corporate Policy Toll Free Number" type="text" placeholder="ADD TOLL FREE NUMBER"/>
+        </div>
+        <ActionButtons onCancel={() => {}} onSave={() => {}} />
     </PageContentWrapper>
   );
 }
 
-export default EmergencyContacts;
+export default MediclaimPolicies;

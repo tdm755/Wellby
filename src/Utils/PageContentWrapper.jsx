@@ -60,7 +60,7 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
             <div className="border-b-2 border-[#FF9E00] -mt-1"></div>
             {children}
           </div>
-          <div className="w-full flex flex-col items-center justify-center gap-2 mt-20 left-0 right-0 -mb-12">
+          <div className="w-full flex flex-col items-center justify-center gap-2 mt-20 left-0 right-0 -mb-20">
             <img className="w-56" src={WellByLogo} alt="WellBy Logo" />
             <div className="h-1 flex items-center justify-center w-full">
               <div

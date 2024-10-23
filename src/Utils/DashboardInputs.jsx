@@ -11,7 +11,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
       <div className='flex flex-col gap-[2px]'>
 
           <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
-          <textarea className={`outline-none font-medium text-[16px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
+          <textarea className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
         
     </div>
     )
@@ -25,14 +25,14 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
 
         <div className="flex gap-2">
         <div className="rounded-md relative">
-              <select className={`outline-none font-medium text-[16px] appearance-none text-[#787878] pl-3 pr-7 rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`}>
+              <select className={`outline-none font-medium text-[19px] appearance-none text-[#787878] pl-3 pr-7 rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`}>
                 <option>+91</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#787878]">
                 <img src={DownIcon} alt="down-icon" className="w-[9px]" />
               </div>
             </div>
-          <input className={`outline-none font-medium text-[16px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type === 'num' ? 'number' : type} value={value} readOnly={readOnlyOf} />
+          <input className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
         </div>
 
       </div>
@@ -45,10 +45,16 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
         <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
         <div className="rounded-md relative">
           <select
-            className={`outline-none font-medium text-[19px] appearance-none text-[#000] pl-3 pr-7 w-full rounded-md py-2 border border-[#E0E0E0] ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-white'}`}
-            value={value}
+            className={`outline-none font-medium text-[19px] appearance-none pl-3 pr-7 w-full rounded-md py-2 border border-[#E0E0E0] ${
+              readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-white'
+            } ${
+              value ? 'text-[#000]' : 'text-[#787878]'
+            }`}
+            value={value || ''}
             disabled={readOnlyOf}
+            onChange={onChange}
           >
+            <option value="" disabled hidden>{placeholder}</option>
             {options && options.map((option, index) => (
               <option key={index} value={option.value || option}>{option.label || option}</option>
             ))}
@@ -111,7 +117,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
   return (
     <div className='flex flex-col gap-[2px]'>
       <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
-      <input className={`outline-none font-medium text-[16px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
+      <input className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
       {/* <img className='w-6 h-6 absolute top-3 left-3' src={icon} alt="" /> */}
       {/* {icon2 && <img className='cursor-pointer w-6 h-6 absolute top-3 right-3' src={icon2} alt="" />} */}
     </div>
