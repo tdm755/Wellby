@@ -87,12 +87,12 @@ function Dashboard() {
           <div className="">
             <DashboardFormCompo
               title={'Personal Details'}
-              path={'personaldetails'}
+              path={'/personaldetails'}
               inputs={[
                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
                 <DashboardInputs label={'Mobile'} type={'number'} value={9384754535} readOnlyOf={true} />,
-                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-                <DashboardInputs label={''} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Personal Email ID'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Address'} type={'textarea'} value={'Nitesh Rathod'} readOnlyOf={true} />,
               ]}
             />
           </div>

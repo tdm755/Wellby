@@ -5,6 +5,17 @@ import DownIcon from '../../public/assets/SVG/down-icon.svg'
 function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
 
 
+  if (type === 'textarea'){
+    return(
+      <div className='flex flex-col gap-[2px]'>
+
+          <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
+          <textarea className={`outline-none font-medium text-[19px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
+        
+    </div>
+    )
+  }
+
   if (type === 'number') {
     return (
       <div className='flex flex-col gap-[2px]'>
