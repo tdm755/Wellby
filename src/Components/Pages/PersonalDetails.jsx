@@ -1,4 +1,3 @@
-import React from "react";
 import DashboardInputs from "../../Utils/DashboardInputs";
 import PageContentWrapper from "../../Utils/PageContentWrapper";
 import ActionButtons from "../../Utils/ActionButtons";
@@ -13,6 +12,7 @@ function PersonalDetails() {
       pageTitle="PERSONAL DETAILS"
       backPath="/dashboard"  // This will make the back button go to the profile page
     >
+      <div className="my-1"></div>
       <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} />
       <DashboardInputs label="Middle Name" type="text"  placeholder={'ADD YOUR MIDDLE NAME'} />
       <DashboardInputs label="Last Name" type="text" value={'Rathod'} placeholder={'ADD YOUR LAST NAME'} readOnlyOf={true}/>

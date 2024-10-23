@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import DashboardHeader from "../Header/DashboardHeader";
 import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
 import LogoutIcon from "../../../public/assets/SVG/logout-icon.svg";
@@ -107,14 +107,14 @@ function Dashboard() {
               title={'Personal Details'}
               path={'/personaldetails'}
               inputs={[
-                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-                <DashboardInputs label={'Mobile'} type={'number'} value={9384754535} readOnlyOf={true} />,
-                <DashboardInputs label={'Personal Email ID'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-                <DashboardInputs label={'Address'} type={'textarea'} value={'11/83, Unnat Nagar 3, MG Road, Goregaon (West)'} readOnlyOf={true} />,
-                <DashboardInputs label={'Nearby Landmark'} type={'text'} value={'Shabri Hotel, Goregaon'} readOnlyOf={true} />,
-                <DashboardInputs label={'Pin Code'} type={'num'} value={'400019'} readOnlyOf={true} />,
-                <DashboardInputs label={'City'} type={'text'} value={'Mumbai'} readOnlyOf={true} />,
-                <DashboardInputs label={'State'} type={'text'} value={'Maharashtra'} readOnlyOf={true} />,
+                <DashboardInputs key="fullName" label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs key="mobile" label={'Mobile'} type={'number'} value={9384754535} readOnlyOf={true} />,
+                <DashboardInputs key="personalEmail" label={'Personal Email ID'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs key="address" label={'Address'} type={'textarea'} value={'11/83, Unnat Nagar 3, MG Road, Goregaon (West)'} readOnlyOf={true} />,
+                <DashboardInputs key="nearbyLandmark" label={'Nearby Landmark'} type={'text'} value={'Shabri Hotel, Goregaon'} readOnlyOf={true} />,
+                <DashboardInputs key="pinCode" label={'Pin Code'} type={'num'} value={'400019'} readOnlyOf={true} />,
+                <DashboardInputs key="city" label={'City'} type={'text'} value={'Mumbai'} readOnlyOf={true} />,
+                <DashboardInputs key="state" label={'State'} type={'text'} value={'Maharashtra'} readOnlyOf={true} />,
               ]}
             />
           </div>
@@ -148,11 +148,11 @@ function Dashboard() {
               title={'Medical Details'}
               path={'/medicaldetails'}
               inputs={[
-                <DashboardInputs label={'Family Physician Name'} type={'text'} value={'Akshay Sinha'} readOnlyOf={true} />,
-                <DashboardInputs label={'Family Physician Number'} type={'number'} value={9820485536} readOnlyOf={true} />,
-                <DashboardInputs label={'Blood Group'} type={'text'} value={'O +ve'} readOnlyOf={true} />,
-                <DashboardInputs label={'Allergies (If any)'} type={'text'} value={'Pepper, Peanuts'} readOnlyOf={true} />,
-                <DashboardInputs label={'Medical Conditions (If any)'} type={'text'} value={'High Blood Pressure'} readOnlyOf={true} />,
+                <DashboardInputs key="familyPhysicianName" label={'Family Physician Name'} type={'text'} value={'Akshay Sinha'} readOnlyOf={true} />,
+                <DashboardInputs key="familyPhysicianNumber" label={'Family Physician Number'} type={'number'} value={9820485536} readOnlyOf={true} />,
+                <DashboardInputs key="bloodGroup" label={'Blood Group'} type={'text'} value={'O +ve'} readOnlyOf={true} />,
+                <DashboardInputs key="allergies" label={'Allergies (If any)'} type={'text'} value={'Pepper, Peanuts'} readOnlyOf={true} />,
+                <DashboardInputs key="medicalConditions" label={'Medical Conditions (If any)'} type={'text'} value={'High Blood Pressure'} readOnlyOf={true} />,
               ]}
             />
           </div>
