@@ -136,6 +136,28 @@ function Dashboard() {
             </div>
           </div>
 
+          {/* Medical Details */}
+           <div className="mt-12">
+            <DashboardFormCompo
+              title={'Medical Details'}
+              path={'/medicaldetails'}
+              inputs={[
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+               ]}
+            />
+          </div>
+
+           {/* Mediclaim Policies */}
+           <div className="mt-12">
+            <DashboardFormCompo
+              title={'Mediclaim Policies'}
+              path={'/mediclaimpolicies'}
+              inputs={[
+                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+               ]}
+            />
+          </div>
+
 
 
 
