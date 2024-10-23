@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import DownIcon from '../../public/assets/SVG/down-icon.svg'
+import CalendarIcon from '../../public/assets/SVG/calender-icon.svg'
 
 
-function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
+function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options, onChange }) {
 
 
   if (type === 'textarea'){
@@ -34,6 +35,75 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf }) {
           <input className={`outline-none font-medium text-[16px] text-[#787878] pl-3 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : ' bg-transparent'}`} placeholder={placeholder} type={type === 'num' ? 'number' : type} value={value} readOnly={readOnlyOf} />
         </div>
 
+      </div>
+    )
+  }
+
+  if (type === 'select') {
+    return (
+      <div className='flex flex-col gap-[2px]'>
+        <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
+        <div className="rounded-md relative">
+          <select
+            className={`outline-none font-medium text-[19px] appearance-none text-[#000] pl-3 pr-7 w-full rounded-md py-2 border border-[#E0E0E0] ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-white'}`}
+            value={value}
+            disabled={readOnlyOf}
+          >
+            {options && options.map((option, index) => (
+              <option key={index} value={option.value || option}>{option.label || option}</option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#787878]">
+            <img src={DownIcon} alt="down-icon" className="w-[9px]" />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'date') {
+    const [formattedDate, setFormattedDate] = useState('');
+
+    useEffect(() => {
+      if (value) {
+        const date = new Date(value);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = date.toLocaleString('default', { month: 'long' });
+        const year = date.getFullYear();
+        setFormattedDate(`${day}, ${month} ${year}`);
+      }
+    }, [value]);
+
+    const handleDateChange = (e) => {
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    return (
+      <div className='flex flex-col gap-[2px]'>
+        <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
+        <div className="relative">
+          <input
+            type="text"
+            className={`outline-none font-medium text-[19px] text-[#787878] pl-3 pr-10 w-full rounded-sm py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent'}`}
+            value={formattedDate}
+            readOnly
+            placeholder="DD, Month YYYY"
+          />
+          <input
+            type="date"
+            className="absolute inset-0 opacity-0 cursor-pointer"
+            value={value}
+            onChange={handleDateChange}
+            readOnly={readOnlyOf}
+          />
+          <img 
+            src={CalendarIcon} 
+            alt="calendar" 
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
+          />
+        </div>
       </div>
     )
   }

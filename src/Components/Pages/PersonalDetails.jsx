@@ -1,61 +1,33 @@
-import React, { useState } from "react";
-import DashboardHeader from "../Header/DashboardHeader";
-import WellByLogo from "../../../public/assets/images/WellByLogo.png";
-import BackIcon from "../../../public/assets/SVG/back-icon.svg";
+import React from "react";
 import DashboardInputs from "../../Utils/DashboardInputs";
+import PageContentWrapper from "../../Utils/PageContentWrapper";
+import ActionButtons from "../../Utils/ActionButtons";
 
 function PersonalDetails() {
   return (
-    <div className="min-h-screen bg-black flex justify-center">
-      <div className="w-[400px] relative bg-[#EEEEEE]">
-        <DashboardHeader />
-        <div className="h-[180px] overflow-hidden relative rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
-
-        <div className="absolute top-[90px] left-0 right-0">
-          <div className="mb-2">
-            <div className="flex items-center text-sm justify-end mr-10">
-              <span className="text-[#3C3C3C]">My Profile</span>
-              <span className="mx-2 text-[#3C3C3C]">&gt;</span>
-              <span className="text-[#3C3C3C] font-bold">
-                Personal Details
-              </span>
-            </div>
-          </div>
-          <div className="mx-5 p-5 rounded-lg bg-white shadow-xl  left-0 right-0 flex flex-col gap-4">
-            <div className="flex items-center ">
-              <img
-                src={BackIcon}
-                alt="Back Icon"
-                className="w-6 h-6 cursor-pointer mr-4"
-              />
-              <h1 className="text-[#3C3C3C] font-semibold text-lg">
-                PERSONAL DETAILS
-              </h1>
-            </div>
-            <div className="border-b-2 border-[#FF9E00] -mt-1"></div>
-            <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} />
-          </div>
-        </div>
-        <div className="w-full flex flex-col items-center justify-center gap-2 absolute bottom-0 left-0 right-0 mb-2">
-          <img className="w-56" src={WellByLogo} alt="WellBy Logo" />
-          <div className="h-1 flex items-center justify-center w-full">
-            <div
-              className="w-[90%] h-full"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to right, #A0A0A0 50%, transparent 50%)",
-                backgroundSize: "10px 1.2px",
-                backgroundRepeat: "repeat-x",
-              }}
-            ></div>
-          </div>
-          <p className="text-xs md:text-sm">
-            Powered by:{" "}
-            <span className="font-semibold">Wellby Solutions Pvt. Ltd.</span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageContentWrapper
+      breadcrumbs={[
+        { label: "My Profile", link: "/dashboard" },
+        { label: "Personal Details", link: "/personaldetails", active: true },
+      ]}
+      pageTitle="PERSONAL DETAILS"
+      backPath="/dashboard"  // This will make the back button go to the profile page
+    >
+      <DashboardInputs label="Full Name" type="text" value={'Nitesh Rathod'} readOnlyOf={true} />
+      <DashboardInputs label="Middle Name" type="text"  placeholder={'ADD YOUR MIDDLE NAME'} />
+      <DashboardInputs label="Last Name" type="text" value={'Rathod'} placeholder={'ADD YOUR LAST NAME'} readOnlyOf={true}/>
+      <DashboardInputs label="Gender" type="select" options={['Male', 'Female', 'Other']} />
+      <DashboardInputs label="Mobile" type="number" readOnlyOf={true} value={'9820485536'} />
+      <DashboardInputs label="Personal Email ID" type="email" value={'niteshrathod@gmail.com'} />
+      <DashboardInputs label="Full Address" type="textarea" value={'11/83, Unnat Nagar 3, MG Road, Goregaon (West)'} />
+      <DashboardInputs label="Pincode" type="num" value={'400063'} />
+      <DashboardInputs label="Nearby Landmark" type="text" placeholder={'ADD NEARBY HOUSE LANDMARK'} />
+      <DashboardInputs label="City" type="text" placeholder={'ADD YOUR CITY'}  value={'Mumbai'}/>
+      <DashboardInputs label="State" type="text" placeholder={'ADD YOUR STATE'}  value={'Maharashtra'}/>
+      <DashboardInputs label="Country" type="text" placeholder={'ADD YOUR COUNTRY'}  value={'India'}/>
+      <DashboardInputs label="Date of Birth" type="date" placeholder={'DD/MM/YYYY'}  value={'1990-01-01'} readOnlyOf={true}/>
+      <ActionButtons onCancel={() => {}} onSave={() => {}} />
+    </PageContentWrapper>
   );
 }
 
