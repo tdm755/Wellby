@@ -1,7 +1,6 @@
 import React from "react";
 import CloseIcon from "../../public/assets/icons/close-icon.svg";
 import ModalHead from "../../public/assets/SVG/modal-head.svg"
-import DashboardHeader from "../Components/Header/DashboardHeader";
 
 function Modal({ isOpen, onClose, children, showHeader = true }) {
   if (!isOpen) return null;
