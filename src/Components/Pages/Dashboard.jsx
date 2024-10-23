@@ -27,6 +27,8 @@ function Dashboard() {
         <div className="h-[467px] overflow-hidden relative rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
           <img className="w-[347px]  mt-2 " src={HeroImage} alt="" />
         </div>
+
+
         <div className="mx-5 p-5 rounded-lg bg-white shadow-xl absolute top-[270px] left-0 right-0 flex flex-col gap-4">
 
           {/* Logout BTN */}
@@ -63,6 +65,7 @@ function Dashboard() {
 
         </div>
 
+
         <div className="px-5">
           <div className="bg-white rounded-lg p-5 shadow-xl mt-20 left-0 right-0 ">
             <div className="flex flex-col gap-4">
@@ -92,6 +95,7 @@ function Dashboard() {
 
           <hr className="border mt-6 mb-6 border-[#FF9E00]" />
 
+          {/* Personal Details */}
           <div className="">
             <DashboardFormCompo
               title={'Personal Details'}
@@ -109,30 +113,36 @@ function Dashboard() {
             />
           </div>
 
+
+          {/* Emergengy Contacts */}
           <div className="mt-12">
-          <div className='w-full border rounded-lg bg-white shadow-xl'>
-
-              
-                <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
-                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>title</span>
-                <img onClick={()=>{navigate(path)}} className='w-6' src={EditIcon} alt="" />
+            <div className='w-full border rounded-lg bg-white shadow-xl'>
+              <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
+                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>Emergency Contacts</span>
+                <img onClick={() => { navigate('') }} className='w-6' src={EditIcon} alt="" />
               </div>
-              
 
-              
-              <h4 className='pl-4 pt-4 font-semibold text-[#3C3C3C]'>pageTitle</h4>
+              <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Primary Emergency Contact</h4>
+              <div className={`px-4 flex flex-col gap-5`}>
+                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+              </div>
+              <div className="flex items-center justify-center"><hr className="border mt-6 mb-6 border-[#C8C8C8] w-[90%]" /></div>
+              <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Secondary Emergency Contact</h4>
               <div className={`px-4 pb-7 flex flex-col gap-5`}>
-              
+                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
               </div>
-              </div>
+            </div>
           </div>
+
+
+
 
         </div>
 
 
-
-
-        <div className="border-b-2 border-[#FF9E00] my-10 mx-5"></div>
+        
         <div className="w-full flex flex-col items-center justify-center mt-10 mb-2 gap-2">
           <img className='w-56' src={WellByLogo} alt="" />
           <div className="h-1 flex items-center justify-center w-full">
