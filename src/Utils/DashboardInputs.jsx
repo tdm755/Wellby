@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import DownIcon from '../../public/assets/SVG/down-icon.svg'
 import CalendarIcon from '../../public/assets/SVG/calender-icon.svg'
+import UploadIcon from '../../public/assets/SVG/upload-icon.svg'
+import DownloadIcon from '../../public/assets/SVG/download-icon.svg'  
+import ViewIcon from '../../public/assets/SVG/view-icon.svg'
 
 
 function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options, onChange }) {
@@ -65,6 +68,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
 
   if (type === 'date') {
     const [displayDate, setDisplayDate] = useState('');
+    const dateInputRef = useRef(null);
 
     const formatDate = (dateString) => {
       if (!dateString) return '';
@@ -88,18 +92,25 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
       }
     };
 
+    const handleCalendarClick = () => {
+      if (!readOnlyOf && dateInputRef.current) {
+        dateInputRef.current.showPicker();
+      }
+    };
+
     return (
       <div className='flex flex-col gap-[2px]'>
         <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
         <div className="relative">
           <input
             type="text"
-            className={`outline-none font-medium text-[16px] text-[#787878] pl-3 pr-10 w-full rounded-[4px] py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent border border-[#C8C8C8]'}`}
+            className={`outline-none font-medium text-[16px] text-[#3C3C3C] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 pr-10 w-full rounded-[4px] py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent border border-[#C8C8C8]'}`}
             value={displayDate}
             placeholder={placeholder}
             readOnly
           />
           <input
+            ref={dateInputRef}
             type="date"
             className="absolute inset-0 opacity-0 cursor-pointer"
             value={value}
@@ -109,7 +120,70 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
           <img 
             src={CalendarIcon} 
             alt="calendar" 
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 cursor-pointer"
+            onClick={handleCalendarClick}
+          />
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'date2') {
+    const [displayDate, setDisplayDate] = useState('');
+    const dateInputRef = useRef(null);
+
+    const formatDate = (dateString) => {
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return '';
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
+
+    useEffect(() => {
+      setDisplayDate(formatDate(value));
+    }, [value]);
+
+    const handleDateChange = (e) => {
+      const newDate = e.target.value;
+      setDisplayDate(formatDate(newDate));
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    const handleCalendarClick = () => {
+      if (!readOnlyOf && dateInputRef.current) {
+        dateInputRef.current.showPicker();
+      }
+    };
+
+    return (
+      <div className='flex flex-col gap-[2px]'>
+        <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
+        <div className="relative">
+          <input
+            type="text"
+            className={`outline-none font-medium text-[16px] text-[#3C3C3C] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 pr-10 w-full rounded-[4px] py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent border border-[#C8C8C8]'}`}
+            value={displayDate}
+            placeholder={placeholder}
+            readOnly
+          />
+          <input
+            ref={dateInputRef}
+            type="date"
+            className="absolute inset-0 opacity-0 cursor-pointer"
+            value={value}
+            onChange={handleDateChange}
+            readOnly={readOnlyOf}
+          />
+          <img 
+            src={CalendarIcon} 
+            alt="calendar" 
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 cursor-pointer"
+            onClick={handleCalendarClick}
           />
         </div>
       </div>
