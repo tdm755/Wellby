@@ -19,7 +19,7 @@ function HeroSection() {
   const handleSwipeMove = (clientX) => {
     if (!isDraggingRef.current) return;
     const diff = clientX - startXRef.current;
-    const maxSwipe = swipeRef.current.offsetWidth - 80; // 80 is the width of the SOS button
+    const maxSwipe = swipeRef.current.offsetWidth - 110; // 80 is the width of the SOS button
     const newPosition = Math.max(0, Math.min(diff, maxSwipe));
     setSwipePosition(newPosition);
 
