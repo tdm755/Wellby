@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DashboardHeader from "../Header/DashboardHeader";
 import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
 import LogoutIcon from "../../../public/assets/SVG/logout-icon.svg";
@@ -11,11 +11,17 @@ import LocationIcon from "../../../public/assets/SVG/location-icon.svg";
 import WellByLogo from "../../../public/assets/images/WellByLogo.png";
 import DashboardInputs from "../../Utils/DashboardInputs";
 import EditIcon from '../../../public/assets/images/EditIcon.svg'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Dashboard() {
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const pathname = location;
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <div className="min-h-screen bg-black flex justify-center">
@@ -32,7 +38,7 @@ function Dashboard() {
         <div className="mx-5 p-5 rounded-lg bg-white shadow-xl absolute top-[270px] left-0 right-0 flex flex-col gap-4">
 
           {/* Logout BTN */}
-          <img src={LogoutIcon} alt="Logout" className="w-8 h-8 cursor-pointer absolute top-4 right-4" />
+          <img onClick={()=>{navigate('/')}} src={LogoutIcon} alt="Logout" className="w-8 h-8 cursor-pointer absolute top-4 right-4" />
 
           {/* Upper Content */}
           <div className=" flex flex-col gap-2">
@@ -146,7 +152,7 @@ function Dashboard() {
                 <DashboardInputs label={'Family Physician Number'} type={'number'} value={9820485536} readOnlyOf={true} />,
                 <DashboardInputs label={'Blood Group'} type={'text'} value={'O +ve'} readOnlyOf={true} />,
                 <DashboardInputs label={'Allergies (If any)'} type={'text'} value={'Pepper, Peanuts'} readOnlyOf={true} />,
-                <DashboardInputs label={'Medical Conditions (If any)'} type={'text'} value={'High Blood Pressure'} readOnlyOf={false} />,
+                <DashboardInputs label={'Medical Conditions (If any)'} type={'text'} value={'High Blood Pressure'} readOnlyOf={true} />,
               ]}
             />
           </div>
@@ -190,7 +196,7 @@ function Dashboard() {
 
 
         <div className="w-full flex flex-col items-center justify-center mt-10 mb-2 gap-2">
-          <img className='w-56' src={WellByLogo} alt="" />
+          <img className='w-56 cursor-pointer' onClick={()=>{navigate('/')}} src={WellByLogo} alt="" />
           <div className="h-1 flex items-center justify-center w-full">
             <div
               className="w-[90%] h-full"

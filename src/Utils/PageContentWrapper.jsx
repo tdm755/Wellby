@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import BackIcon from "../../public/assets/SVG/back-icon.svg";
 import DashboardHeader from "../Components/Header/DashboardHeader";
 import WellByLogo from "../../public/assets/images/WellByLogo.png";
@@ -14,6 +14,14 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
       navigate(-1); // This will navigate to the previous page if no backPath is provided
     }
   };
+
+
+  const location = useLocation();
+  const pathname = location;
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <div className="min-h-screen bg-black flex justify-center select-none">
@@ -61,7 +69,7 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
             {children}
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-2 mt-20 left-0 right-0 -mb-20">
-            <img className="w-56" src={WellByLogo} alt="WellBy Logo" />
+            <img className="w-56 cursor-pointer" onClick={()=>{navigate('/')}} src={WellByLogo} alt="WellBy Logo" />
             <div className="h-1 flex items-center justify-center w-full">
               <div
                 className="w-[90%] h-full"
