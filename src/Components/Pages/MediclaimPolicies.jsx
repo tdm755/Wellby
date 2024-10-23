@@ -17,7 +17,6 @@ function MediclaimPolicies() {
         <div className="space-y-6">
             <h2 className="text-md font-medium ">Corporate Mediclaim Policy</h2>
             <UploadUtil 
-              initialFileName="Nitesh-Mediclaim-Policy.pdf"
               uploadLabel="ADD CORPORATE MEDICLAIM POLICY"
             />
             <DashboardInputs label="Mediclaim Company" type="text" value={'Manipal Cigna'}/>
@@ -29,6 +28,7 @@ function MediclaimPolicies() {
             <h2 className="text-md font-medium ">Personal Mediclaim Policy</h2> 
             <UploadUtil 
               uploadLabel="ADD PERSONAL MEDICLAIM POLICY"
+              readonly={true}
             />
             <DashboardInputs label="Mediclaim Company" type="text" placeholder="ADD COMPANY NAME" />           
             <DashboardInputs label="Mediclaim Policy No" type="text" placeholder="ADD POLICY NO." />        

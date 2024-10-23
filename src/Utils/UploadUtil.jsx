@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useId } from 'react';
 import DownloadIcon from '../../public/assets/SVG/download-icon.svg';
 import UploadIcon from '../../public/assets/SVG/upload-icon.svg';
+import ViewIcon from '../../public/assets/SVG/view-icon.svg';
 
-function UploadUtil({ initialFileName = '', uploadLabel = 'Upload File' }) {
-  const [file, setFile] = useState(initialFileName ? { name: initialFileName } : null);
+function UploadUtil({ uploadLabel = 'Upload File' }) {
+  const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const fileInputRef = useRef(null);
+  const uniqueId = useId();
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -62,12 +64,12 @@ function UploadUtil({ initialFileName = '', uploadLabel = 'Upload File' }) {
             <div className="text-md font-medium">{file.name}</div>
           )
         ) : (
-          <div className="text-md text-[#C8C8C8] font-medium text-center">{uploadLabel}</div>
+          <div className="text-[13px] tracking-[0.20em] font-normal text-[#C8C8C8] text-center">{uploadLabel}</div>
         )}
       </div>
       <div className="bg-[#EEEEEE] w-full h-10 flex justify-between items-center gap-2 px-2 rounded-b-lg">
         <div className="text-sm font-medium truncate flex-grow">{file ? file.name : ''}</div>
-        <div className="flex gap-2 flex-shrink-0">
+        <div className="flex gap-2 flex-shrink-0">  
           {file && (
             <img
               src={DownloadIcon}
@@ -76,11 +78,11 @@ function UploadUtil({ initialFileName = '', uploadLabel = 'Upload File' }) {
               onClick={handleDownload}
             />
           )}
-          <label htmlFor="file-upload" className="cursor-pointer">
+          <label htmlFor={`file-upload-${uniqueId}`} className="cursor-pointer">
             <img src={UploadIcon} alt="upload" className="w-6 h-6" />
           </label>
           <input
-            id="file-upload"
+            id={`file-upload-${uniqueId}`}
             type="file"
             onChange={handleFileChange}
             className="hidden"
