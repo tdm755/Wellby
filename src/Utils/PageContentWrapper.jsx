@@ -19,9 +19,9 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
     <div className="min-h-screen bg-black flex justify-center select-none">
       <div className="w-[400px] relative bg-[#EEEEEE]">
         <DashboardHeader />
-        <div className="h-[180px] overflow-hidden relative rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
+        <div className="h-[180px] overflow-hidden rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
 
-        <div className="absolute top-[95px] left-0 right-0">
+        <div className="relative -top-[85px] left-0 right-0">
           <div className="mb-2">
             <div className="flex items-center text-sm justify-end mr-10">
               {breadcrumbs.map((crumb, index) => (
@@ -60,7 +60,7 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
             <div className="border-b-2 border-[#FF9E00] -mt-1"></div>
             {children}
           </div>
-          <div className="w-full flex flex-col items-center justify-center gap-2 mt-20 left-0 right-0 mb-2">
+          <div className="w-full flex flex-col items-center justify-center gap-2 mt-20 left-0 right-0 -mb-12">
             <img className="w-56" src={WellByLogo} alt="WellBy Logo" />
             <div className="h-1 flex items-center justify-center w-full">
               <div

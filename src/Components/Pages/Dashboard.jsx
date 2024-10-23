@@ -114,8 +114,8 @@ function Dashboard() {
 
               
                 <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
-                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>title</span>
-                <img onClick={()=>{navigate(path)}} className='w-6' src={EditIcon} alt="" />
+                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>EMERGENCY CONTACTS</span>
+                <img onClick={()=>{navigate('/emergencycontacts')}} className='w-6' src={EditIcon} alt="" />
               </div>
               
 
