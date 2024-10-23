@@ -147,15 +147,28 @@ function Dashboard() {
             />
           </div>
 
+
+
            {/* Mediclaim Policies */}
            <div className="mt-12">
-            <DashboardFormCompo
-              title={'Mediclaim Policies'}
-              path={'/mediclaimpolicies'}
-              inputs={[
-                <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-               ]}
-            />
+            <div className='w-full border rounded-lg bg-white shadow-xl'>
+              <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
+                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>Mediclaim Policies</span>
+                <img onClick={() => { navigate('/mediclaimpolicies') }} className='w-6' src={EditIcon} alt="" />
+              </div>
+
+              <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Primary Emergency Contact</h4>
+              <div className={`px-4 flex flex-col gap-5`}>
+                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+              </div>
+              <div className="flex items-center justify-center"><hr className="border mt-6 mb-6 border-[#C8C8C8] w-[90%]" /></div>
+              <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Secondary Emergency Contact</h4>
+              <div className={`px-4 pb-7 flex flex-col gap-5`}>
+                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />
+                 <DashboardInputs label={'Mobile'} type={'number'} value={''} readOnlyOf={true} />
+              </div>
+            </div>
           </div>
 
 
