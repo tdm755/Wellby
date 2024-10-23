@@ -10,8 +10,13 @@ import EmployeeIcon from "../../../public/assets/SVG/employee-icon.svg";
 import LocationIcon from "../../../public/assets/SVG/location-icon.svg";
 import WellByLogo from "../../../public/assets/images/WellByLogo.png";
 import DashboardInputs from "../../Utils/DashboardInputs";
+import EditIcon from '../../../public/assets/images/EditIcon.svg'
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-black flex justify-center">
       <div
@@ -59,7 +64,7 @@ function Dashboard() {
         </div>
 
         <div className="px-5">
-          <div className="bg-white rounded-lg p-5 shadow-xl mt-28 mb-5 left-0 right-0 ">
+          <div className="bg-white rounded-lg p-5 shadow-xl mt-20 left-0 right-0 ">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
                 <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
@@ -84,6 +89,9 @@ function Dashboard() {
               </div>
             </div>
           </div>
+
+          <hr className="border mt-6 mb-6 border-[#FF9E00]" />
+
           <div className="">
             <DashboardFormCompo
               title={'Personal Details'}
@@ -92,10 +100,33 @@ function Dashboard() {
                 <DashboardInputs label={'Full Name'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
                 <DashboardInputs label={'Mobile'} type={'number'} value={9384754535} readOnlyOf={true} />,
                 <DashboardInputs label={'Personal Email ID'} type={'text'} value={'Nitesh Rathod'} readOnlyOf={true} />,
-                <DashboardInputs label={'Address'} type={'textarea'} value={'Nitesh Rathod'} readOnlyOf={true} />,
+                <DashboardInputs label={'Address'} type={'textarea'} value={'11/83, Unnat Nagar 3, MG Road, Goregaon (West)'} readOnlyOf={true} />,
+                <DashboardInputs label={'Nearby Landmark'} type={'text'} value={'Shabri Hotel, Goregaon'} readOnlyOf={true} />,
+                <DashboardInputs label={'Pin Code'} type={'num'} value={'400019'} readOnlyOf={true} />,
+                <DashboardInputs label={'City'} type={'text'} value={'Mumbai'} readOnlyOf={true} />,
+                <DashboardInputs label={'State'} type={'text'} value={'Maharashtra'} readOnlyOf={true} />,
               ]}
             />
           </div>
+
+          <div className="mt-12">
+          <div className='w-full border rounded-lg bg-white shadow-xl'>
+
+              
+                <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg flex items-center justify-between px-4 shadow-lg">
+                <span className='tracking-[0.20em] font-semibold text-white text-md uppercase'>title</span>
+                <img onClick={()=>{navigate(path)}} className='w-6' src={EditIcon} alt="" />
+              </div>
+              
+
+              
+              <h4 className='pl-4 pt-4 font-semibold text-[#3C3C3C]'>pageTitle</h4>
+              <div className={`px-4 pb-7 flex flex-col gap-5`}>
+              
+              </div>
+              </div>
+          </div>
+
         </div>
 
 
