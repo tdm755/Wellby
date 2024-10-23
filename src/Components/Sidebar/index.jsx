@@ -14,8 +14,8 @@ function Sidebar({ isOpen, onClose }) {
   return (
     <>
       <div 
-        className={`fixed top-0 z-50 bottom-0  w-[300px] bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto ${
-          isOpen ? 'left-0' : ' -left-[350px]'
+        className={`fixed top-0 z-50 bottom-0 w-[300px] bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto ${
+          isOpen ? 'left-[0px]' : ' -left-[350px]'
         } flex flex-col`}
       >
         <div className="p-5 flex justify-end items-center">
