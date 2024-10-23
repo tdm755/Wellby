@@ -25,6 +25,7 @@ import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../../public/assets/images/default-background.png';
 import Header from '../Header/index.jsx'
 import Sidebar from '../Sidebar/index.jsx'
+import { useLocation } from 'react-router-dom'
 
 function HomePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -49,6 +50,16 @@ function HomePage() {
       onSwipedLeft: () => setIsSidebarOpen(false),
       trackMouse: true
     });
+
+
+
+  const location = useLocation();
+  const pathname = location;
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  }, [pathname])
+
 
   return (
     <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
