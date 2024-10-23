@@ -64,19 +64,25 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
   }
 
   if (type === 'date') {
-    const [formattedDate, setFormattedDate] = useState('');
+    const [displayDate, setDisplayDate] = useState('');
+
+    const formatDate = (dateString) => {
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return '';
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = date.toLocaleString('default', { month: 'long' });
+      const year = date.getFullYear();
+      return `${day}, ${month} ${year}`;
+    };
 
     useEffect(() => {
-      if (value) {
-        const date = new Date(value);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = date.toLocaleString('default', { month: 'long' });
-        const year = date.getFullYear();
-        setFormattedDate(`${day}, ${month} ${year}`);
-      }
+      setDisplayDate(formatDate(value));
     }, [value]);
 
     const handleDateChange = (e) => {
+      const newDate = e.target.value;
+      setDisplayDate(formatDate(newDate));
       if (onChange) {
         onChange(e);
       }
@@ -88,10 +94,10 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
         <div className="relative">
           <input
             type="text"
-            className={`outline-none font-medium text-[19px] text-[#787878] pl-3 pr-10 w-full rounded-[4px] py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent'}`}
-            value={formattedDate}
+            className={`outline-none font-medium text-[16px] text-[#787878] pl-3 pr-10 w-full rounded-[4px] py-2 ${readOnlyOf ? 'bg-[#F5F5F5]' : 'bg-transparent border border-[#C8C8C8]'}`}
+            value={displayDate}
+            placeholder={placeholder}
             readOnly
-            placeholder="DD, Month YYYY"
           />
           <input
             type="date"
