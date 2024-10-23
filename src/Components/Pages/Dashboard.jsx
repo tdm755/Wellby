@@ -30,7 +30,7 @@ function Dashboard() {
       >
         <DashboardHeader />
 
-        <div className="h-[467px] overflow-hidden relative rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
+        <div className=" h-[467px] overflow-hidden sticky top-0  rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
           <img className="w-[347px]  mt-2 " src={HeroImage} alt="" />
         </div>
 
@@ -72,7 +72,7 @@ function Dashboard() {
         </div>
 
 
-        <div className="px-5 mb-24">
+        <div className="px-5 mb-24 relative">
           <div className="bg-white rounded-lg p-5 shadow-xl mt-20 left-0 right-0 ">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
