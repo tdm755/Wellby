@@ -1,52 +1,150 @@
-import Logo from "../../../public/logo.svg";
-import HeaderRightSideLogo from "../../../public/assets/images/HeaderRightSideLogo.png";
-import HeroImage from "../../../public/assets/SVG/dashboard-hero.svg";
-import CloseIcon from "../../../public/assets/icons/close-icon.svg";
+import AuthWrapper from '../../Utils/AuthWrapper';
+import { useState, useEffect } from 'react';
+import DownIcon from '../../../public/assets/SVG/down-icon.svg'
+import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
+import { useNavigate } from "react-router-dom";
 
-function Login({ onClose }) {
+function Login() {
+    const [mobileNumber, setMobileNumber] = useState('');
+    const [showVerification, setShowVerification] = useState(false);
+    const [otp, setOtp] = useState(['', '', '', '', '', '']);
+    const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
+  
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      let timer;
+      if (showVerification && countdown > 0) {
+        timer = setInterval(() => {
+          setCountdown((prevCount) => prevCount - 1);
+        }, 1000);
+      }
+  
+      return () => {
+        if (timer) clearInterval(timer);
+      };
+    }, [showVerification, countdown]);
+  
+    const handleConfirm = () => {
+      setShowVerification(true);
+      setCountdown(120);
+    };
+  
+    const handleChangeNumber = () => {
+      setShowVerification(false);
+      setMobileNumber('');
+      setOtp(['', '', '', '', '', '']);
+      setCountdown(120);
+    };
+  
+    const handleOtpChange = (index, value) => {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+    };
+  
+    const isOtpComplete = otp.every(digit => digit !== '');
+
   return (
-    <div className="min-h-screen bg-black flex justify-center">
-      {/* Gradient background with hero image */}
-      <div className="relative w-[450px] h-screen">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FFCB05] to-[#FFA500]">
-          {/* Header */}
-          <div className="flex items-center mt-4">
-            <div className="flex items-center justify-center w-[15%] ">
-              <img src={Logo} alt="Logo" className="w-8 cursor-pointer" />
-            </div>
-            <div className="flex-grow w-[85%] h-11 flex justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45">
-              <div className="border-white h-full flex items-center justify-center w-full">
-                <span className="text-white whitespace-nowrap font-bold text-center w-full text-[0.80rem]">
-                  Safety is Everyone&apos;s responsibility
-                </span>
+    <AuthWrapper>
+      <div className="relative overflow-hidden" style={{ height: '400px' }}>
+        {/* login part */}
+        <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
+             style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
+          <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Welcome</h2>
+          <p className="text-md mb-4 font-bold">
+            <span className="border-b border-[#FFA500] pb-2">Enter your reg</span>istered mobile number
+          </p>
+          <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
+          <div className="flex items-center mb-4 gap-2 mx-1">
+            <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
+              <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
+                <option>+91</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <img src={DownIcon} alt="down-icon" className="w-[9px]" />
               </div>
-              <img
-                className="h-8"
-                src={HeaderRightSideLogo}
-                alt="Header Right Logo"
+            </div>
+            <div className="flex-grow shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md">
+              <input
+                type="tel"
+                placeholder="ENTER YOUR MOBILE NUMBER"
+                className="w-full bg-white text-gray-700 rounded-md py-3 px-3 text-sm outline-none h-12"
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, '');
+                  setMobileNumber(value);
+                }}
+                value={mobileNumber}
+                maxLength={10}
               />
             </div>
           </div>
-          
-          {/* Hero Image */}
-          <img src={HeroImage} alt="Hero Image" className="mx-5 mt-10 object-cover " />
+          {mobileNumber.length === 10 && (
+            <button
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-6 w-full text-xl"
+              onClick={handleConfirm}
+            >
+              Confirm
+            </button>
+          )}
         </div>
-        
-        {/* White part overlaying the gradient and hero image */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 h-[67.5vh]">
-         {/* Close button */}
-        <div onClick={onClose} className="absolute z-50 top-4 right-4 flex items-center">
+
+        {/* verification part */}
+        <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
+             style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
+          <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Verify Number</h2>
+          <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-3">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-3'>+9</span>1 {mobileNumber}</span></p>
           <button 
-            
-            className="flex items-center space-x-2 px-2 py-1 hover:bg-gray-100 rounded"
+            className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs"
+            onClick={handleChangeNumber}
           >
-            <span className="text-black text-sm font-bold">CLOSE</span>
-            <img src={CloseIcon} alt="Close" className="w-4 h-4 cursor-pointer invert"/>
+            CHANGE NUMBER? 
+            <img src={ForwardIcon} alt="forward-icon" className="w-4 h-3 ml-2" />
           </button>
-        </div>
+          <div className="flex justify-between mb-3 mt-4 mx-1">
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                type="tel"
+                maxLength="1"
+                value={digit}
+                className="w-10 h-10 text-center rounded-md outline-none shadow-[0_0_8px_rgba(0,0,0,0.2)]"
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, '');
+                  handleOtpChange(index, value);
+                  if (value && e.target.nextSibling) {
+                    e.target.nextSibling.focus();
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Backspace' && !e.target.value && e.target.previousSibling) {
+                    e.preventDefault();
+                    e.target.previousSibling.focus();
+                  }
+                }}
+                onFocus={(e) => e.target.style.border = '1.5px solid #1DC63C'}
+                onBlur={(e) => e.target.style.border = e.target.value ? '1.5px solid #1DC63C' : 'none'}
+                style={{ border: digit ? '1.5px solid #1DC63C' : 'none' }}
+              />
+            ))}
+          </div>
+          <div className="flex justify-between items-center mb-4">
+            <span className={`font-bold ${countdown === 0 ? 'text-[#FF483C]' : 'text-[#FFA500]'}`}>
+              {String(Math.floor(countdown / 60)).padStart(2, '0')}:{String(countdown % 60).padStart(2, '0')}
+            </span>
+            <button className="">OTP not received? <span className="text-[#FF483C] font-bold">Resend OTP</span></button>
+          </div>
+          {isOtpComplete && (
+            <button
+            onClick={()=>{navigate('dashboard')}}
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
+            >
+              Verify
+            </button>
+          )}
         </div>
       </div>
-    </div>
+    </AuthWrapper>
   );
 }
 
