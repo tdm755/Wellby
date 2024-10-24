@@ -17,7 +17,8 @@ function MediclaimPolicies() {
             <h2 className="text-md font-medium ">Corporate Mediclaim Policy</h2>
             <UploadUtil 
               uploadLabel="ADD CORPORATE MEDICLAIM POLICY"
-            />
+              ReadOnlyOf={false}
+            />            
             <DashboardInputs label="Mediclaim Company" type="text" value={'Manipal Cigna'}/>
             <DashboardInputs label="Mediclaim Policy No" type="text" value={'6697131448383468-7891'} placeholder={'ADD POLICY NO.'}/>    
             <DashboardInputs label="Corporate Policy Expiry Date" type="date2" value={'2026-10-22'} placeholder={'ADD POLICY EXPIRY DATE'}/>        
@@ -27,7 +28,7 @@ function MediclaimPolicies() {
             <h2 className="text-md font-medium ">Personal Mediclaim Policy</h2> 
             <UploadUtil 
               uploadLabel="ADD PERSONAL MEDICLAIM POLICY"
-              readonly={true}
+              ReadOnlyOf={false}
             />
             <DashboardInputs label="Mediclaim Company" type="text" placeholder="ADD COMPANY NAME" />           
             <DashboardInputs label="Mediclaim Policy No" type="text" placeholder="ADD POLICY NO." />        

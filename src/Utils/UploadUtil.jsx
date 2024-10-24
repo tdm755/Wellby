@@ -4,7 +4,7 @@ import UploadIcon from '../../public/assets/SVG/upload-icon.svg';
 import ViewIcon from '../../public/assets/SVG/view-icon.svg';
 import PropTypes from 'prop-types';
 
-function UploadUtil({ uploadLabel = 'Upload File' }) {
+function UploadUtil({ uploadLabel,  ReadOnlyOf = false }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const fileInputRef = useRef(null);
@@ -52,12 +52,12 @@ function UploadUtil({ uploadLabel = 'Upload File' }) {
   };
 
   return (
-    <div className="border border-[#C8C8C8] rounded-lg">
+    <div className="border border-[#C8C8C8] rounded-lg overflow-hidden w-full">
       <div className="w-full h-20 flex justify-center items-center overflow-hidden">
         {file ? (
           preview ? (
             file.type.startsWith('image/') ? (
-              <img src={preview} alt="File preview" className="max-w-full max-h-full object-contain" />
+              <img src={preview} alt="File preview" className="w-full  object-contain" />
             ) : (
               <iframe src={preview} className="w-full h-full" title="PDF Preview" />
             )
@@ -72,23 +72,39 @@ function UploadUtil({ uploadLabel = 'Upload File' }) {
         <div className="text-sm font-medium truncate flex-grow">{file ? file.name : ''}</div>
         <div className="flex gap-2 flex-shrink-0">  
           {file && (
-            <img
-              src={DownloadIcon}
-              alt="download"
-              className="w-6 h-6 cursor-pointer"
-              onClick={handleDownload}
-            />
+            <>
+              <img
+                src={ViewIcon} // Use ViewIcon for viewing
+                alt="view"
+                className="w-6 h-6 cursor-pointer"
+                onClick={() => {
+                  const url = URL.createObjectURL(file); // Create a temporary URL for the file
+                  window.open(url, '_blank'); // Open the document in a new tab
+                  URL.revokeObjectURL(url); // Clean up the URL after opening
+                }} 
+              />
+              <img
+                src={DownloadIcon}
+                alt="download"
+                className="w-6 h-6 cursor-pointer"
+                onClick={handleDownload}
+              />
+            </>
           )}
-          <label htmlFor={`file-upload-${uniqueId}`} className="cursor-pointer">
-            <img src={UploadIcon} alt="upload" className="w-6 h-6" />
-          </label>
-          <input
-            id={`file-upload-${uniqueId}`}
-            type="file"
-            onChange={handleFileChange}
-            className="hidden"
-            ref={fileInputRef}
-          />
+          {!ReadOnlyOf && ( // Only show upload option if ReadOnlyOf is false
+            <>
+              <label htmlFor={`file-upload-${uniqueId}`} className="cursor-pointer">
+                <img src={UploadIcon} alt="upload" className="w-6 h-6" />
+              </label>
+              <input
+                id={`file-upload-${uniqueId}`}
+                type="file"
+                onChange={handleFileChange}
+                className="hidden"
+                ref={fileInputRef}
+              />
+            </>
+          )}
         </div>
       </div>
     </div>
