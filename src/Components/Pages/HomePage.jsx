@@ -66,7 +66,7 @@ function HomePage() {
       <div 
         {...handlers}
         className={`w-full max-w-[400px] flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
-        style={{ backgroundImage: `url(${DefaultBackground})` }}
+        style={{ backgroundImage: `url(${DefaultBackground})`, backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
