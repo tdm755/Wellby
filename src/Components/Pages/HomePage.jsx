@@ -177,6 +177,7 @@ function HomePage() {
                 </div>
 
                 <div className="py-7 flex flex-col gap-7">
+                  
                   <Input label={'Mediclaim Company'} type='text' value={'Manipal Cigna'} icon={MedCompany} />
                   <Input label={'Mediclaim-ID'} type='text' value={'5095491581'} icon={PolicyRelationShipManager} />
                   <Input label={'Policy Relationship Manager'} type='text' value={'Rajkumar Tiwari'} icon={MedID} icon2={CallIcon} />
