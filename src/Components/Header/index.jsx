@@ -19,7 +19,7 @@ function Header({ toggleSidebar }) {
   }, []);
 
   return (
-    <header className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center z-40 transition-colors duration-300 ${isScrolled ? 'bg-[#FFCE05] shadow-md rounded-bl-[50px]' : ''}`}>
+    <header className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center z-40 transition-colors duration-300 ${isScrolled ? 'bg-[#FFCE05] shadow-md rounded-bl-[40px]' : ''}`}>
       <div className="flex items-center flex-wrap w-full py-3">
         <div className="flex items-center justify-center w-[16%]">
           <img 
