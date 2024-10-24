@@ -1,6 +1,4 @@
-import React from 'react'
-import Input from './Input'
-import CompanyIcon from '../../public/assets/images/companyIcon.svg'
+import PropTypes from 'prop-types'
 
 
 function FormCompo({title, inputs}) {
@@ -14,6 +12,11 @@ function FormCompo({title, inputs}) {
       </div>
     </div>
   )
+}
+
+FormCompo.propTypes = {
+  title: PropTypes.string.isRequired,
+  inputs: PropTypes.array.isRequired,
 }
 
 export default FormCompo

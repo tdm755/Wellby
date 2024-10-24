@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 
 function Input({label, type, value, icon, icon2}) {
   return (
@@ -9,6 +9,14 @@ function Input({label, type, value, icon, icon2}) {
       {icon2 && <img className='cursor-pointer w-6 h-6 absolute top-3 right-3' src={icon2} alt="" />}
     </div>
   )
+}
+
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  icon2: PropTypes.string
 }
 
 export default Input

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from '../../../public/logo.svg';
 import { useNavigate } from 'react-router-dom';
 import HeaderRightSideLogo from '../../../public/assets/images/HeaderRightSideLogo.png';
@@ -54,7 +54,7 @@ function DashboardHeader() {
               <img
                 src={LogoutIcon}
                 alt="Logout"
-                className="w-8 h-8 cursor-pointer"
+                className="w-7 cursor-pointer"
                 onClick={() => {/* Add logout functionality */}}
               />
             </div>

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import HamburgerMenu from '../../../public/assets/icons/hamburger-menu.svg';
 import HeaderRightSideLogo from '../../../public/assets/images/HeaderRightSideLogo.png';
+import PropTypes from 'prop-types';
 
 function Header({ toggleSidebar }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,6 +41,10 @@ function Header({ toggleSidebar }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
 export default Header;
 

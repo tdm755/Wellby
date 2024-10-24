@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 import CloseIcon from "../../public/assets/icons/close-icon.svg";
 import ModalHead from "../../public/assets/SVG/modal-head.svg"
 
@@ -34,5 +34,12 @@ function Modal({ isOpen, onClose, children, showHeader = true }) {
     </div>
   );
 }
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  showHeader: PropTypes.bool
+};
 
 export default Modal;

@@ -3,6 +3,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import BackIcon from "../../public/assets/SVG/back-icon.svg";
 import DashboardHeader from "../Components/Header/DashboardHeader";
 import WellByLogo from "../../public/assets/images/WellByLogo.png";
+import PropTypes from 'prop-types';
 
 function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
     <div className="min-h-screen bg-black flex justify-center select-none">
       <div className="w-[400px] relative bg-[#EEEEEE]">
         <DashboardHeader />
-        <div className="h-[180px] overflow-hidden rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
+        <div className="sticky top-0 h-[180px] overflow-hidden rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
 
         <div className="relative -top-[85px] left-0 right-0">
           <div className="mb-2">
@@ -91,5 +92,18 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
     </div>
   );
 }
+
+PageContentWrapper.propTypes = {
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      link: PropTypes.string,
+      active: PropTypes.bool,
+    })
+  ).isRequired,
+  pageTitle: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  backPath: PropTypes.string,
+};
 
 export default PageContentWrapper;

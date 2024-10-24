@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 import DownIcon from '../../public/assets/SVG/down-icon.svg'
 import ForwardIcon from '../../public/assets/SVG/forward-arrow-icon.svg'
 import Modal from '../Utils/Modal';
@@ -145,5 +146,10 @@ function EmergencyModal({ isOpen, onClose }) {
     </Modal>
   );
 }
+
+EmergencyModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default EmergencyModal;

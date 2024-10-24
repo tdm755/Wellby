@@ -1,4 +1,3 @@
-import React from 'react';
 import HomePage from './Components/Pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Components/Pages/Dashboard';
