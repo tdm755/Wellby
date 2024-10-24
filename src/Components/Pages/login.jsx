@@ -136,7 +136,7 @@ function Login() {
           </div>
           {isOtpComplete && (
             <button
-            onClick={()=>{navigate('dashboard')}}
+            onClick={()=>{navigate('/dashboard')}}
               className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
             >
               Verify
