@@ -31,7 +31,7 @@ function Header({ toggleSidebar }) {
         </div>
         <div className="flex-grow w-[84%] h-11 flex  justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45 ">
           <div className=" border-white h-full flex items-center justify-center w-full">
-            <span className="text-white whitespace-nowrap font-bold text-center w-full text-[10px] xss:text-[0.80rem]">
+            <span className="text-white whitespace-nowrap font-bold text-center w-full text-[12px] xss:text-[0.80rem]">
               Safety is Everyone&apos;s responsibility
             </span>
           </div>
