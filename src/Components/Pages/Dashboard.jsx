@@ -12,6 +12,7 @@ import WellByLogo from "../../../public/assets/images/WellByLogo.png";
 import DashboardInputs from "../../Utils/DashboardInputs";
 import EditIcon from '../../../public/assets/images/EditIcon.svg'
 import { useLocation, useNavigate } from "react-router-dom";
+import UploadUtil from "../../Utils/UploadUtil";
 
 function Dashboard() {
 
@@ -171,6 +172,10 @@ function Dashboard() {
 
               <h4 className='pl-4 pt-4 pb-2 font-semibold text-[#3C3C3C]'>Corporate Mediclaim Policy</h4>
               <div className={`px-4 flex flex-col gap-5`}>
+                <UploadUtil 
+                  uploadLabel="ADD CORPORATE MEDICLAIM POLICY"
+                  ReadOnlyOf={true}
+                />
                 <DashboardInputs label={'Mediclaim Company'} type={'text'} value={'Manipal Cigna'} readOnlyOf={true} />
                 <DashboardInputs label={'Mediclaim Policy No'} type={'num'} value={5095491581} readOnlyOf={true} />
                 <DashboardInputs label={'Corporate Policy Expiry Date'} type={'text'} value={'27, January 2025'} readOnlyOf={true} />
@@ -181,6 +186,10 @@ function Dashboard() {
               <div className="flex items-center justify-center"><hr className="border mt-6 mb-6 border-[#C8C8C8] w-[90%]" /></div>
               <h4 className='pl-4 pb-2 font-semibold text-[#3C3C3C]'>Personal Mediclaim Policy</h4>
               <div className={`px-4 pb-7 flex flex-col gap-5`}>
+                <UploadUtil 
+                  uploadLabel="ADD CORPORATE MEDICLAIM POLICY"
+                  ReadOnlyOf={true}
+                />
                 <DashboardInputs label={'Mediclaim Company'} type={'text'} value={'Manipal Cigna'} readOnlyOf={true} />
                 <DashboardInputs label={'Mediclaim Policy No'} type={'num'} value={5095491581} readOnlyOf={true} />
                 <DashboardInputs label={'Corporate Policy Expiry Date'} type={'text'} value={'27, January 2025'} readOnlyOf={true} />

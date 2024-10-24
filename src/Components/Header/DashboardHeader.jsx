@@ -47,7 +47,7 @@ function DashboardHeader() {
           </>
         ) : (
           <div className="flex items-center justify-between w-full px-4 relative">
-            <span className="text-white whitespace-nowrap font-bold text-[1rem] absolute left-1/2 transform -translate-x-1/2 pr-6">
+            <span className="text-white whitespace-nowrap font-bold text-[10px] xss:text-[0.80rem] absolute left-1/2 transform -translate-x-1/2 pr-6">
               Safety is Everyone&apos;s responsibility
             </span>
             <div className="ml-auto">

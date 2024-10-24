@@ -27,6 +27,7 @@ import DefaultBackground from '../../../public/assets/images/DefaultBackgroundIm
 import Header from '../Header/index.jsx'
 import Sidebar from '../Sidebar/index.jsx'
 import { useLocation } from 'react-router-dom'
+import UploadUtil from '../../Utils/UploadUtil.jsx'
 
 function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -151,6 +152,7 @@ function HomePage() {
             </div>
           </div>
 
+         
           {/* Mediclaim Policies */}
           <div className="w-full flex flex-col gap-20 mt-[90px] px-5">
 
