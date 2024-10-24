@@ -7,7 +7,7 @@ function Login({ onClose }) {
   return (
     <div className="min-h-screen bg-black flex justify-center">
       {/* Gradient background with hero image */}
-      <div className="relative w-[400px] h-screen">
+      <div className="relative w-[450px] h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-[#FFCB05] to-[#FFA500]">
           {/* Header */}
           <div className="flex items-center mt-4">
