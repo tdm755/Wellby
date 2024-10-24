@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 import CloseIcon from '../../../public/assets/icons/close-icon.svg';
 import SidebarImage from '../../../public/assets/SVG/sidebar.svg';
 import LoginModal from './LoginModal';
@@ -56,5 +57,10 @@ function Sidebar({ isOpen, onClose }) {
     </>
   );
 }
+
+Sidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default Sidebar;

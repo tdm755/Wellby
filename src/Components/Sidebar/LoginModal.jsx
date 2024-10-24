@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DownIcon from '../../../public/assets/SVG/down-icon.svg'
 import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
 import Modal from '../../Utils/Modal';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function LoginModal({ isOpen, onClose }) {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -147,5 +148,10 @@ function LoginModal({ isOpen, onClose }) {
     </Modal>
   );
 }
+
+LoginModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default LoginModal;

@@ -1,7 +1,8 @@
-import React, { useState, useRef, useId } from 'react';
+import { useState, useRef, useId } from 'react';
 import DownloadIcon from '../../public/assets/SVG/download-icon.svg';
 import UploadIcon from '../../public/assets/SVG/upload-icon.svg';
 import ViewIcon from '../../public/assets/SVG/view-icon.svg';
+import PropTypes from 'prop-types';
 
 function UploadUtil({ uploadLabel = 'Upload File' }) {
   const [file, setFile] = useState(null);
@@ -93,5 +94,9 @@ function UploadUtil({ uploadLabel = 'Upload File' }) {
     </div>
   );
 }
+
+UploadUtil.propTypes = {
+  uploadLabel: PropTypes.string,
+};
 
 export default UploadUtil;

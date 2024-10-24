@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const ActionButtons = ({ onCancel, onSave, showCancel = true, showSave = true }) => {
   return (
@@ -21,6 +21,13 @@ const ActionButtons = ({ onCancel, onSave, showCancel = true, showSave = true })
       )}
     </div>
   );
+};
+
+ActionButtons.propTypes = {
+  onCancel: PropTypes.func,
+  onSave: PropTypes.func,
+  showCancel: PropTypes.bool,
+  showSave: PropTypes.bool,
 };
 
 export default ActionButtons;

@@ -1,6 +1,4 @@
-import React from 'react'
-import Input from './Input'
-import CompanyIcon from '../../public/assets/images/companyIcon.svg'
+import PropTypes from 'prop-types'
 import EditIcon from '../../public/assets/images/EditIcon.svg'
 import { useNavigate } from 'react-router-dom'
 
@@ -30,6 +28,13 @@ function DashboardFormCompo({title, inputs, path, pageTitle}) {
       </div>
     </div>
   )
+}
+
+DashboardFormCompo.propTypes = {
+  title: PropTypes.string,
+  inputs: PropTypes.array.isRequired,
+  path: PropTypes.string,
+  pageTitle: PropTypes.string
 }
 
 export default DashboardFormCompo

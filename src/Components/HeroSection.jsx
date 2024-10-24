@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import HeroImage from '../../public/assets/images/HeroSectionImage.png'
 import LogoInHeroSection from '../../public/assets/LogoInHeroSection.svg'
 import rightArrow from '../../public/assets/images/rightArrow.svg'

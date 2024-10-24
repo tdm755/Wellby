@@ -1,5 +1,3 @@
-import React from 'react'
-import DashboardHeader from '../Header/DashboardHeader'
 import pageNotFoundImage from "../../../public/assets/images/pageNotFoundImage.svg";
 import ContactIcon from "../../../public/assets/images/ContactIcon.svg";
 import PageNotFoundGreenLine from "../../../public/assets/images/PageNotFoundGreenLine.svg";

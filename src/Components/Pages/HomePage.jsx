@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeroSection from '../HeroSection.jsx'
 import FormCompo from '../../Utils/FormCompo.jsx'
 import Input from '../../Utils/Input.jsx'
@@ -86,10 +86,10 @@ function HomePage() {
             <FormCompo
               title={'Personal Details'}
               inputs={[
-                <Input label="Company" type="text" value={'Unilever'} icon={CompanyIcon} />,
-                <Input label="Employee ID" type="text" value={'129588'} icon={EmployeeIDIcon} />,
-                <Input label="Nearby Landmark" type="text" value={'Inorbit Mall, Goregaon'} icon={LocationIcon} />,
-                <Input label="City" type="text" value={'Mumbai'} icon={CityIcon} />
+                <Input key="company" label="Company" type="text" value={'Unilever'} icon={CompanyIcon} />,
+                <Input key="employeeId" label="Employee ID" type="text" value={'129588'} icon={EmployeeIDIcon} />,
+                <Input key="landmark" label="Nearby Landmark" type="text" value={'Inorbit Mall, Goregaon'} icon={LocationIcon} />,
+                <Input key="city" label="City" type="text" value={'Mumbai'} icon={CityIcon} />
               ]}
             />
           </div>
@@ -141,9 +141,9 @@ function HomePage() {
             <FormCompo
               title={'MEDICAL Details'}
               inputs={[
-                <Input label="Allergies" type="text" value={'Shellfish, Peanuts'} icon={AllergiesIcon} />,
-                <Input label="Medical Conditions" type="text" value={'High Blood Pressure'} icon={MedicalConditionsIcon} />,
-                <Input label="Primary Physician" type="text" value={'Dr. Shrikant Thakar'} icon={PrimaryPhysician} icon2={CallIcon} />,
+                <Input key="allergies" label="Allergies" type="text" value={'Shellfish, Peanuts'} icon={AllergiesIcon} />,
+                <Input key="medicalConditions" label="Medical Conditions" type="text" value={'High Blood Pressure'} icon={MedicalConditionsIcon} />,
+                <Input key="primaryPhysician" label="Primary Physician" type="text" value={'Dr. Shrikant Thakar'} icon={PrimaryPhysician} icon2={CallIcon} />,
               ]}
             />
 
@@ -227,8 +227,8 @@ function HomePage() {
             <FormCompo
               title={'Emergency Contacts'}
               inputs={[
-                <Input label="HR Manager" type="text" value={'Jayesh Chakrobarty'} icon={HrManagerIcon} icon2={CallIcon} />,
-                <Input label="Safety Manager" type="text" value={'Roop Kumar Rathod'} icon={SafetyManager} icon2={CallIcon} />,
+                <Input key="hrManager" label="HR Manager" type="text" value={'Jayesh Chakrobarty'} icon={HrManagerIcon} icon2={CallIcon} />,
+                <Input key="safetyManager" label="Safety Manager" type="text" value={'Roop Kumar Rathod'} icon={SafetyManager} icon2={CallIcon} />,
               ]}
             />
           </div>

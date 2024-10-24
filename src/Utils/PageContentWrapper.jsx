@@ -3,6 +3,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import BackIcon from "../../public/assets/SVG/back-icon.svg";
 import DashboardHeader from "../Components/Header/DashboardHeader";
 import WellByLogo from "../../public/assets/images/WellByLogo.png";
+import PropTypes from 'prop-types';
 
 function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
   const navigate = useNavigate();
@@ -91,5 +92,18 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
     </div>
   );
 }
+
+PageContentWrapper.propTypes = {
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      link: PropTypes.string,
+      active: PropTypes.bool,
+    })
+  ).isRequired,
+  pageTitle: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  backPath: PropTypes.string,
+};
 
 export default PageContentWrapper;
