@@ -19,9 +19,9 @@ function Modal({ isOpen, onClose, children, showHeader = true }) {
         <div onClick={onClose} className="absolute z-50 top-4 right-4 flex items-center">
           <button 
             
-            className="flex items-center space-x-2 px-2 py-1 hover:bg-gray-100 rounded"
+            className="flex items-center space-x-2 px-2 py-1  rounded"
           >
-            <span className="text-black text-sm font-bold">CLOSE</span>
+            <span className="text-black text-xs font-bold">CLOSE</span>
             <img src={CloseIcon} alt="Close" className="w-4 h-4 cursor-pointer invert"/>
           </button>
         </div>

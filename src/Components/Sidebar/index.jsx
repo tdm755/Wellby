@@ -20,7 +20,7 @@ function Sidebar({ isOpen, onClose }) {
       <div className="p-5 flex justify-end items-center">
         <span className="mr-2 text-white text-xs font-bold cursor-pointer" onClick={onClose}>CLOSE</span>
         <img 
-          src={CloseIcon} 
+          src={CloseIcon}  
           alt="Close" 
           className="w-5 h-5 cursor-pointer" 
           onClick={onClose}
