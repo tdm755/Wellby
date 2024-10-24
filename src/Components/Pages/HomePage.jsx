@@ -20,7 +20,8 @@ import HrManagerIcon from '../../../public/assets/images/HrManagerIcon.svg'
 import SafetyManager from '../../../public/assets/images/SafetyManager.svg'
 import AddImage from '../../../public/assets/images/AddImage.png'
 import WellByLogo from '../../../public/assets/images/WellByLogo.png'
-import BlogComp from '../../Utils/blogComp.jsx'
+import BlogBGImage from '../../../public/assets/images/BlogBGImage.png'
+import BlogComponent from '../../Utils/BlogComp.jsx'
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../../public/assets/images/default-background.png';
 import Header from '../Header/index.jsx'
@@ -81,14 +82,14 @@ function HomePage() {
         <div className="w-full px-5 mt-12">
           <div className="w-full flex flex-col gap-4 items-center justify-center">
             <div className="flex flex-col gap-4 w-full items-center justify-center">
-              <div className="relative">
-                <span className='tooltip w-5 h-5 bg-white absolute rotate-45 top-7 rounded-sm -right-1 z-50'></span>
-                <div className='tooltip Shadow bg-white  w-64 z-40 rounded-md p-4 absolute top-9 -right-16 flex flex-col gap-2 '>
-                  <h3 className='text-[#3C3C3C] text-sm font-bold'>Keep your Personal & Medical details always updated.</h3>
-                  <span className='text-[#787878]'>In case of any emergency, people can get easy access to your details. Click on the menu icon to login and update the details.</span>
-                </div>
-                  <h3 className='flex gap-1 text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'>Find my details below <img className='w-3 AlertIconH' src={AlertIcon} alt="" /></h3>
-              </div>
+             
+                  <div className='flex gap-1 text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'>
+                    Find my details below 
+                    <div className="">
+                      <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
+                    </div>
+                  </div>
+              
               <div className="px-10 w-full bg-white h-12 font-semibold text-[#0F4254] flex items-center justify-center text-lg md:text-xl rounded-lg">Nitesh Rajkumar Rathod</div>
             </div>
             <FormCompo
@@ -222,9 +223,9 @@ function HomePage() {
               <p className='text-sm md:text-md'>Explore quick resources to respond to crises.</p>
             </div>
             <div className="flex flex-col gap-8">
-              <BlogComp />
-              <BlogComp />
-              <BlogComp />            
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
             </div>
           </div>
         </div>
