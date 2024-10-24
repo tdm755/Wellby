@@ -1,7 +1,6 @@
-import BlogBGImage from '../../public/assets/images/BlogBGImage.png'
+import React from "react"
 
-
-function BlogComp({Image, Title,  Description}) {
+function BlogComponent({Image, Title,  Description}) {
 
   return (
     <div className='h-80 rounded-lg bg-white shadow-xl'>
@@ -14,4 +13,4 @@ function BlogComp({Image, Title,  Description}) {
   )
 }
 
-export default BlogComp
+export default BlogComponent

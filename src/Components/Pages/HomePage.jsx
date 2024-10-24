@@ -21,7 +21,7 @@ import SafetyManager from '../../../public/assets/images/SafetyManager.svg'
 import AddImage from '../../../public/assets/images/AddImage.png'
 import WellByLogo from '../../../public/assets/images/WellByLogo.png'
 import BlogBGImage from '../../../public/assets/images/BlogBGImage.png'
-import BlogComp from '../../Utils/blogComp.jsx'
+import BlogComponent from '../../Utils/BlogComp.jsx'
 import { useSwipeable } from 'react-swipeable';
 import DefaultBackground from '../../../public/assets/images/default-background.png';
 import Header from '../Header/index.jsx'
@@ -223,9 +223,9 @@ function HomePage() {
               <p className='text-sm md:text-md'>Explore quick resources to respond to crises.</p>
             </div>
             <div className="flex flex-col gap-8">
-              <BlogComp Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
-              <BlogComp Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
-              <BlogComp Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
+              <BlogComponent Image={BlogBGImage} Title={'First Aid Tips for Road Safety'} Description={'Victims  |  Medanta'} />
             </div>
           </div>
         </div>
