@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Logo from "../../public/logo.svg";
 import HeaderRightSideLogo from "../../public/assets/images/HeaderRightSideLogo.png";
-import AuthImage from "../../public/assets/images/auth-img.png";
+import HeroImage from "../../public/assets/SVG/dashboard-hero.svg";
 import CloseIcon from "../../public/assets/icons/close-icon.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -36,9 +36,9 @@ function AuthWrapper({ children }) {
           </div>
         </div>
         
-        {/* Auth Image */}
-        <div className="absolute bottom-[480px] left-0 right-0 flex justify-center">
-          <img src={AuthImage} alt="Auth" className="w-full object-cover" />
+        {/* Hero Image */}
+        <div className="absolute left-0 right-0 top-[100px] flex justify-center mx-5">
+          <img src={HeroImage} alt="Hero" className="w-full h-auto max-w-md" />
         </div>
         
         {/* White part overlaying the gradient and hero image */}

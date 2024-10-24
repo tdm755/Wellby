@@ -48,15 +48,4 @@ Header.propTypes = {
 
 export default Header;
 
-          {/* <div className="w-[70px] h-[25px] bg-[#0F4254] absolute top-[2.9rem] right-0" style={{
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
-          }}></div>          
-          <div className="w-[20px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-9 right-[56px]" style={{
-            clipPath: 'polygon(0 0, 70% 0, 100% 100%, 30% 100%)'
-          }}></div>
-          <div className="w-[20px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-9 right-[33px]" style={{
-            clipPath: 'polygon(0 0, 70% 0, 100% 100%, 30% 100%)'
-          }}></div>
-          <div className="w-[30px] h-[20px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05] absolute top-9 right-0" style={{
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
-          }}></div> */}
+      
