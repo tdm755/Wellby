@@ -44,8 +44,12 @@
 .Shadow{
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.297)
 }
-.Shadow2{
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.429)
+
+.NumShadow2{
+    box-shadow: -2px 4px 11px 0px rgba(0, 0, 0, 0.114)
+}
+.NumShadow{
+    box-shadow: 2px 4px 11px 0px rgba(0, 0, 0, 0.114)
 }
 
 .AlertIconH:hover{

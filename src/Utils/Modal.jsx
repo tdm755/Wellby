@@ -5,7 +5,7 @@ import ModalHead from "../../public/assets/SVG/modal-head.svg"
 function Modal({ isOpen, onClose, children, showHeader = true }) {
   return (
     <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-      <div className={`bg-white w-full max-w-[400px] rounded-t-2xl px-6 transition-transform duration-700 ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className={`bg-white w-full MainContainer rounded-t-2xl px-6 transition-transform duration-700 ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
         {/* Header */}
         {showHeader && (
           <div className="bg-gradient-to-t absolute -top-16 mx-3 mr-10 from-[#FF9A04] via-[#FF9A04] via-10% to-[#FFCE05]  h-16 flex items-center  px-6 rounded-t-2xl mb-[-1px]">

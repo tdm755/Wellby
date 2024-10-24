@@ -57,7 +57,7 @@ function Login() {
           </p>
           <p className="text-sm mb-4">Always keep your <span className="font-bold">Personal & Medical details</span> updated for <span className="font-bold">First Responder</span> to take prompt decisions in case of Emergency.</p>
           <div className="flex items-center mb-4 gap-2 mx-1">
-            <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
+            <div className="NumShadow rounded-md relative">
               <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
                 <option>+91</option>
               </select>
@@ -65,7 +65,7 @@ function Login() {
                 <img src={DownIcon} alt="down-icon" className="w-[9px]" />
               </div>
             </div>
-            <div className="flex-grow shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md">
+            <div className="flex-grow NumShadow2 rounded-md">
               <input
                 type="tel"
                 placeholder="ENTER YOUR MOBILE NUMBER"
@@ -108,7 +108,7 @@ function Login() {
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-10 h-10 text-center rounded-md outline-none shadow-[0_0_8px_rgba(0,0,0,0.2)]"
+                className="w-10 h-10 text-center rounded-md outline-none NumShadow2"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);

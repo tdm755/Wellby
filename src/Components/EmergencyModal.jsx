@@ -55,8 +55,8 @@ function EmergencyModal({ isOpen, onClose }) {
             <span className="border-b border-[#FFA500] pb-2">to call my Em</span>ergency Contacts
           </p>
           <p className="text-[0.85rem] mb-4 text-[#787878]">Your details are secured and will not be shared with the<span className="font-bold"> Emergency Contacts.</span></p>
-          <div className="flex items-center mb-4 gap-2 mx-1">
-            <div className="shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md relative">
+          <div className="flex items-center mb-4 gap-2 px-1">
+            <div className="NumShadow rounded-md relative">
               <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
                 <option>+91</option>
               </select>
@@ -64,7 +64,7 @@ function EmergencyModal({ isOpen, onClose }) {
                 <img src={DownIcon} alt="down-icon" className="w-[9px]" />
               </div>
             </div>
-            <div className="flex-grow shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.1),_0_4px_6px_-1px_rgba(0,0,0,0.1),_0_2px_4px_-1px_rgba(0,0,0,0.06)] rounded-md">
+            <div className="flex-grow NumShadow2 rounded-md">
               <input
                 type="tel"
                 placeholder="ENTER YOUR MOBILE NUMBER"
@@ -108,7 +108,7 @@ function EmergencyModal({ isOpen, onClose }) {
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-10 h-10 text-center rounded-md outline-none shadow-[0_0_8px_rgba(0,0,0,0.2)]"
+                className="w-10 h-10 text-center rounded-md outline-none NumShadow2"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);
