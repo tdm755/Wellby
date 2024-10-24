@@ -29,11 +29,11 @@ function Login({ onClose }) {
           </div>
           
           {/* Hero Image */}
-          <img src={HeroImage} alt="Hero Image" className="mx-5 mt-10 object-cover " />
+          <img src={HeroImage} alt="Hero Image" className="mx-5 mt-[40px] object-cover " />
         </div>
         
         {/* White part overlaying the gradient and hero image */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 h-[67.5vh]">
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 top-[230px]">
          {/* Close button */}
         <div onClick={onClose} className="absolute z-50 top-4 right-4 flex items-center">
           <button 
