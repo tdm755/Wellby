@@ -30,10 +30,13 @@ function Dashboard() {
       >
         <DashboardHeader />
 
-        <div className=" h-[467px] overflow-hidden sticky top-0  rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
-          <img className="w-[347px]  mt-2 " src={HeroImage} alt="" />
+        <div className="h-[467px] sticky top-0 rounded-b-[40px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
+          {/* This div remains sticky */}
         </div>
 
+        <div className="absolute top-0 left-0 right-0 pt-[130px] flex items-start justify-center">
+          <img className="w-[347px] mt-2" src={HeroImage} alt="" />
+        </div>
 
         <div className="mx-5 p-5 rounded-lg bg-white shadow-xl absolute top-[270px] left-0 right-0 flex flex-col gap-4">
 
