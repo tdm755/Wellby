@@ -56,17 +56,18 @@ function HomePage() {
   const location = useLocation();
   const pathname = location;
 
-  useEffect(()=>{
-    window.scrollTo(0, 0)
-  }, [pathname])
+  // useEffect(()=>{
+  //   window.scrollTo(0, 0)
+  // }, [pathname])
 
 
   return (
     <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
+    
       <div 
         {...handlers}
-        className={`w-full max-w-[400px] flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
-        style={{ backgroundImage: `url(${DefaultBackground})` }}
+        className={`MainContainer w-full flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
+        style={{ backgroundImage: `url(${DefaultBackground})`,  backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
@@ -80,7 +81,14 @@ function HomePage() {
         <div className="w-full px-5 mt-12">
           <div className="w-full flex flex-col gap-4 items-center justify-center">
             <div className="flex flex-col gap-4 w-full items-center justify-center">
-              <h3 className='flex gap-1 text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'>Find my details below <img className='w-3' src={AlertIcon} alt="" /></h3>
+              <div className="relative">
+                <span className='tooltip w-5 h-5 bg-white absolute rotate-45 top-7 rounded-sm -right-1 z-50'></span>
+                <div className='tooltip Shadow bg-white  w-64 z-40 rounded-md p-4 absolute top-9 -right-16 flex flex-col gap-2 '>
+                  <h3 className='text-[#3C3C3C] text-sm font-bold'>Keep your Personal & Medical details always updated.</h3>
+                  <span className='text-[#787878]'>In case of any emergency, people can get easy access to your details. Click on the menu icon to login and update the details.</span>
+                </div>
+                  <h3 className='flex gap-1 text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'>Find my details below <img className='w-3 AlertIconH' src={AlertIcon} alt="" /></h3>
+              </div>
               <div className="px-10 w-full bg-white h-12 font-semibold text-[#0F4254] flex items-center justify-center text-lg md:text-xl rounded-lg">Nitesh Rajkumar Rathod</div>
             </div>
             <FormCompo
@@ -252,6 +260,7 @@ function HomePage() {
           </div>
         </div>
       </div>
+    
     </div>
   )
 }

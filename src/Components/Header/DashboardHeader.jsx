@@ -21,7 +21,7 @@ function DashboardHeader() {
 
   return (
     <header 
-      className={`fixed w-full max-w-[400px] py-3 top-0 items-center justify-center rounded-bl-[50px] z-40 transition-all duration-300 ${
+      className={`MainContainer fixed w-full py-3 top-0 items-center justify-center rounded-bl-[50px] z-40 transition-all duration-300 ${
         isScrolled ? 'bg-[#002D3A] shadow-md ' : ''
       }`}
     >

@@ -16,7 +16,7 @@ function Modal({ isOpen, onClose, children, showHeader = true }) {
         )}
 
         {/* Close button */}
-        <div onClick={onClose} className="absolute top-4 right-4 flex items-center">
+        <div onClick={onClose} className="absolute z-50 top-4 right-4 flex items-center">
           <button 
             
             className="flex items-center space-x-2 px-2 py-1 hover:bg-gray-100 rounded"

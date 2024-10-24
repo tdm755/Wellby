@@ -17,3 +17,109 @@
   }
 }
 
+
+
+:root {
+    --primary-width: 450px;
+}
+
+
+.MainContainer{
+    max-width: var(--primary-width);
+}
+
+/* 
+.tooltip {
+    display: none; 
+}
+
+.AlertIconH:hover + .tooltip {
+    display: block; 
+} */
+
+.Shadow{
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.297)
+}
+.Shadow2{
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.429)
+}
+
+.AlertIconH:hover{
+    .Shadow{
+        display: block;
+    }
+}
+
+
+
+/* src/index.css */
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Black.ttf') format('truetype');
+    font-weight: 900; /* Black */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-ExtraLight.ttf') format('truetype');
+    font-weight: 200; /* Extra Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* Semi Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/Fonts/Inter-Thin.ttf') format('truetype');
+    font-weight: 100; /* Thin */
+    font-style: normal;
+}
+
+body {
+    font-family: 'Inter', sans-serif 
+}
+
+
+
+
