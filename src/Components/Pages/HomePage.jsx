@@ -23,34 +23,34 @@ import WellByLogo from '../../../public/assets/images/WellByLogo.png'
 import BlogBGImage from '../../../public/assets/images/BlogBGImage.png'
 import BlogComponent from '../../Utils/BlogComp.jsx'
 import { useSwipeable } from 'react-swipeable';
-import DefaultBackground from '../../../public/assets/images/default-background.png';
+import DefaultBackground from '../../../public/assets/images/DefaultBackgroundImage2.png';
 import Header from '../Header/index.jsx'
 import Sidebar from '../Sidebar/index.jsx'
 import { useLocation } from 'react-router-dom'
 
 function HomePage() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    useEffect(() => {
-      if (isSidebarOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
 
-      return () => {
-        document.body.style.overflow = 'auto';
-      };
-    }, [isSidebarOpen]);
-
-    const toggleSidebar = () => {
-      setIsSidebarOpen(!isSidebarOpen);
+    return () => {
+      document.body.style.overflow = 'auto';
     };
+  }, [isSidebarOpen]);
 
-    const handlers = useSwipeable({
-      onSwipedLeft: () => setIsSidebarOpen(false),
-      trackMouse: true
-    });
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setIsSidebarOpen(false),
+    trackMouse: true
+  });
 
 
 
@@ -64,11 +64,11 @@ function HomePage() {
 
   return (
     <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
-    
-      <div 
+
+      <div
         {...handlers}
         className={`MainContainer w-full flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
-        style={{ backgroundImage: `url(${DefaultBackground})`,  backgroundAttachment: 'fixed' }}
+        style={{ backgroundImage: `url(${DefaultBackground})`, backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
@@ -76,20 +76,27 @@ function HomePage() {
           <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
         )}
 
-        <HeroSection />          
+        <HeroSection />
 
         {/* UserDetails */}
         <div className="w-full px-5 mt-12">
           <div className="w-full flex flex-col gap-4 items-center justify-center">
             <div className="flex flex-col gap-4 w-full items-center justify-center">
-             
-                  <div className='flex gap-1 text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'>
-                    Find my details below 
-                    <div className="">
-                      <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
+
+              <div className='flex gap-1 items-center'>
+                 <h3 className='text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
+                <div className="relative group cursor-pointer">
+                  <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
+                  <div className="tooltip absolute top-7 -right-20 z-40">
+                    <span className=' w-5 h-5 bg-white absolute rotate-45 -top-2 rounded-sm right-20 z-50'></span>
+                    <div className=' Shadow bg-white  w-64  rounded-md p-4 flex flex-col gap-2 '>
+                      <h3 className='text-[#3C3C3C] text-sm font-bold'>Keep your Personal & Medical details always updated.</h3>
+                      <span className='text-[#787878]'>In case of any emergency, people can get easy access to your details. Click on the menu icon to login and update the details.</span>
                     </div>
                   </div>
-              
+                </div>
+              </div>
+
               <div className="px-10 w-full bg-white h-12 font-semibold text-[#0F4254] flex items-center justify-center text-lg md:text-xl rounded-lg">Nitesh Rajkumar Rathod</div>
             </div>
             <FormCompo
@@ -105,7 +112,7 @@ function HomePage() {
         </div>
 
         {/* Medical Details */}
-        <div className="mt-52 w-full flex flex-col items-center gap-20 bg-[#EEEEEE] relative">
+        <div className="mt-52 w-full flex flex-col items-center gap-20 relative">
 
           {/* Blood Group Section And Medical Details */}
           <div className="flex flex-col items-center justify-center gap-4 absolute -top-24 w-full px-5">
@@ -231,7 +238,7 @@ function HomePage() {
         </div>
 
         {/* Footer Section After Blog Part */}
-        <div className="bg-[#EEEEEE] pt-[77px] flex flex-col gap-11">
+        <div className=" pt-[77px] flex flex-col gap-11">
           <div className="px-5 w-full">
             <FormCompo
               title={'Emergency Contacts'}
@@ -261,7 +268,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-    
+
     </div>
   )
 }

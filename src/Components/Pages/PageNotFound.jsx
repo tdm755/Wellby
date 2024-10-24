@@ -12,9 +12,9 @@ function PageNotFound() {
     return (
         <div className="min-h-screen bg-black flex justify-center">
             <div
-                className="w-[400px] relative bg-[#EEEEEE]"
+                className="MainContainer relative bg-[#EEEEEE]"
             >
-                <header className='absolute w-full max-w-[400px] py-3 top-0 items-center justify-center z-40 transition-colors duration-300 mt-2'>
+                <header className='absolute w-full MainHeaderWidth py-3 top-0 items-center justify-center z-40 transition-colors duration-300 mt-2'>
                     <div className="flex items-center flex-wrap">
                         <div className="flex items-center justify-center w-[15%]">
                             <img

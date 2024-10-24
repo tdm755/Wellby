@@ -28,14 +28,18 @@
     width: var(--primary-width);
 }
 
-/* 
+.MainHeaderWidth{
+    max-width: var(--primary-width);
+}
+
+
 .tooltip {
     display: none; 
 }
 
-.AlertIconH:hover + .tooltip {
+.group:hover .tooltip {
     display: block; 
-} */
+}
 
 .Shadow{
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.297)

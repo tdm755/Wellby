@@ -26,7 +26,7 @@ function Dashboard() {
   return (
     <div className="min-h-screen bg-black flex justify-center">
       <div
-        className="w-[400px] relative bg-[#EEEEEE]"
+        className="MainContainer relative bg-[#EEEEEE]"
       >
         <DashboardHeader />
 

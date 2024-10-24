@@ -26,7 +26,7 @@ function PageContentWrapper({ breadcrumbs, pageTitle, children, backPath }) {
 
   return (
     <div className="min-h-screen bg-black flex justify-center select-none">
-      <div className="w-[400px] relative bg-[#EEEEEE]">
+      <div className="MainContainer relative bg-[#EEEEEE]">
         <DashboardHeader />
         <div className="sticky top-0 h-[180px] overflow-hidden rounded-b-[40px] flex items-start justify-center pt-[130px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]"></div>
 
