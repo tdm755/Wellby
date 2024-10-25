@@ -13,9 +13,7 @@ function Sidebar({ isOpen, onClose }) {
 
   return (
     <div 
-      className={`fixed top-0 z-50 bottom-0 w-[300px] bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto ${
-        isOpen ? 'left-[0px]' : ' -left-[350px]'
-      } flex flex-col`}
+      className={`relative top-0 z-50 left-0 bottom-0 w-[300px] bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto flex flex-col h-screen`}
     >
       <div className="p-5 flex justify-end items-center">
         <span className="mr-2 text-white text-xs font-bold cursor-pointer" onClick={onClose}>CLOSE</span>

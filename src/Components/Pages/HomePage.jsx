@@ -72,7 +72,9 @@ function HomePage() {
         style={{ backgroundImage: `url(${DefaultBackground})`, backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
-        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+        <div className={`absolute right-0 left-0 h-full ${isSidebarOpen ? 'block' : 'hidden'}`}>
+            <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+        </div>
         {isSidebarOpen && (
           <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
         )}
