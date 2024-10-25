@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       screens: {
+        'ssxss': '289px', // Custom screen size for extra small devices
+        'sxss': '360px', // Custom screen size for extra small devices
         'xss': '400px', // Custom screen size for extra small devices
         'xs': '480px', // Custom screen size for extra small devices
         'sm': '640px', // Small devices

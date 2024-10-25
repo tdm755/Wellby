@@ -19,7 +19,7 @@ function HeroSection() {
   const handleSwipeMove = (clientX) => {
     if (!isDraggingRef.current) return;
     const diff = clientX - startXRef.current;
-    const maxSwipe = swipeRef.current.offsetWidth - 110; // 80 is the width of the SOS button
+    const maxSwipe = swipeRef.current.offsetWidth - 110;
     const newPosition = Math.max(0, Math.min(diff, maxSwipe));
     setSwipePosition(newPosition);
 
@@ -73,8 +73,8 @@ function HeroSection() {
 
       <div className="flex flex-col gap-4 items-center justify-center">
         <div className="">
-          <p className='text-[32px] text-[#B4B4B4]'>In case of <span className='font-semibold text-[#FF3E4D]'>Emergency</span></p>
-          <p className='text-white font-bold text-[18px]'>Connect to my Emergency Contact</p>
+          <p className='text-[32px] text-center text-[#B4B4B4] md:text-[28px] sm:text-[24px]'><span className='font-light'>In case of</span> <span className='font-semibold text-[#FF3E4D]'>Emergency</span></p>
+          <p className='text-[#FFFFFF] text-center font-semibold text-[19.2px] md:text-[18px] sm:text-[16px]'>Connect to my Emergency Contact</p>
         </div>
         <div className="w-full px-7">
           <div 

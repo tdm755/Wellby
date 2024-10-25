@@ -32,17 +32,17 @@ import UploadUtil from '../../Utils/UploadUtil.jsx'
 function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // useEffect(() => {
-  //   if (isSidebarOpen) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
 
-  //   return () => {
-  //     document.body.style.overflow = 'auto';
-  //   };
-  // }, [isSidebarOpen]);
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isSidebarOpen]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -69,7 +69,7 @@ function HomePage() {
       <div
         {...handlers}
         className={`MainContainer w-full flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
-        style={{ backgroundImage: `url(${DefaultBackground})`, backgroundAttachment: 'fixed' }}
+        style={{ backgroundImage: `url(${DefaultBackground})`, backgroundSize : '450px', backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
