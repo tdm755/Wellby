@@ -21,7 +21,7 @@ function DashboardHeader() {
 
   return (
     <header 
-      className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center rounded-bl-[50px] z-40 transition-all duration-300 ${
+      className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center rounded-bl-[40px] z-40 transition-all duration-300 ${
         isScrolled ? 'bg-[#002D3A] shadow-md ' : ''
       }`}
     >
@@ -38,7 +38,7 @@ function DashboardHeader() {
             </div>
             <div className="flex-grow w-[85%] h-11 flex justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45">
               <div className="border-white h-full flex items-center justify-center w-full">
-                <span className="text-white whitespace-nowrap font-bold text-center w-full text-[0.80rem]">
+                <span className="text-white whitespace-nowrap font-bold text-center w-full text-[12px] xss:text-[0.80rem]">
                   Safety is Everyone&apos;s responsibility
                 </span>
               </div>
@@ -47,7 +47,7 @@ function DashboardHeader() {
           </>
         ) : (
           <div className="flex items-center justify-between w-full px-4 relative">
-            <span className="text-white whitespace-nowrap font-bold text-[10px] xss:text-[0.80rem] absolute left-1/2 transform -translate-x-1/2 pr-6">
+            <span className="text-white whitespace-nowrap font-bold text-[12px] xss:text-[0.80rem] absolute left-1/2 transform -translate-x-1/2 pr-6">
               Safety is Everyone&apos;s responsibility
             </span>
             <div className="ml-auto">
@@ -55,7 +55,7 @@ function DashboardHeader() {
                 src={LogoutIcon}
                 alt="Logout"
                 className="w-7 cursor-pointer"
-                onClick={() => {/* Add logout functionality */}}
+                onClick={() => { navigate('/'); }}
               />
             </div>
           </div>
