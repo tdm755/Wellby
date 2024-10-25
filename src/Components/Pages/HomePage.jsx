@@ -88,7 +88,7 @@ function HomePage() {
 
               <div className='flex gap-1 items-center'>
                  <h3 className='text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
-                <div className="relative group cursor-pointer">
+                <div className="relative group cursor-pointer ">
                   <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
                   <div className="tooltip absolute top-7 -right-20 z-40">
                     <span className=' w-5 h-5 bg-white absolute rotate-45 -top-2 rounded-sm right-20 z-50'></span>
