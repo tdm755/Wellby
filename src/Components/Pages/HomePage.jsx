@@ -32,17 +32,17 @@ import UploadUtil from '../../Utils/UploadUtil.jsx'
 function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+  // useEffect(() => {
+  //   if (isSidebarOpen) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
 
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isSidebarOpen]);
+  //   return () => {
+  //     document.body.style.overflow = 'auto';
+  //   };
+  // }, [isSidebarOpen]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -72,9 +72,7 @@ function HomePage() {
         style={{ backgroundImage: `url(${DefaultBackground})`, backgroundAttachment: 'fixed' }}
       >
         <Header toggleSidebar={toggleSidebar} />
-        <div className={`absolute right-0 left-0 h-full ${isSidebarOpen ? 'block' : 'hidden'}`}>
-            <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-        </div>
+        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         {isSidebarOpen && (
           <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
         )}
@@ -88,7 +86,7 @@ function HomePage() {
 
               <div className='flex gap-1 items-center'>
                  <h3 className='text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
-                <div className="relative group cursor-pointer ">
+                <div className="relative group cursor-pointer">
                   <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
                   <div className="tooltip absolute top-7 -right-20 z-40">
                     <span className=' w-5 h-5 bg-white absolute rotate-45 -top-2 rounded-sm right-20 z-50'></span>
