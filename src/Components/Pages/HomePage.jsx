@@ -58,9 +58,9 @@ function HomePage() {
   const location = useLocation();
   const pathname = location;
 
-  // useEffect(()=>{
-  //   window.scrollTo(0, 0)
-  // }, [pathname])
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  }, [pathname])
 
 
   return (
