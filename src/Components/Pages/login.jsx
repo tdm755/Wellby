@@ -47,7 +47,7 @@ function Login() {
 
   return (
     <AuthWrapper>
-      <div className="relative overflow-hidden" style={{ height: '400px' }}>
+      <div className="relative overflow-hidden" style={{ height: '400px', touchAction: 'manipulation' }}>
         {/* login part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>

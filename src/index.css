@@ -135,3 +135,23 @@ body {
 
 
 
+.SideBar {
+    animation: sidebaranimation 400ms ease-out forwards; /* Combine animation properties */
+    animation-delay: 0ms;
+    left: -350px;
+    scrollbar-width: thin;
+}
+
+@keyframes sidebaranimation {
+    0%{
+        left: -350px;
+        /* z-index: -999; */
+    }
+    100%{
+        left: 0;
+        /* z-index: 999; */
+    }
+}
+
+
+

@@ -45,13 +45,13 @@ function EmergencyModal({ isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="relative overflow-hidden" style={{ height: '400px' }}>
+      <div className="relative overflow-hidden" style={{ height: '400px', overflow: 'hidden' }}>
         {/* login part */}
-        <div className={`absolute w-full transition-all duration-500  ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
+        <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
           <div className="w-full px-6">
-          <h2 className="text-4xl text-[#FFA500]  mt-7">Verify your</h2>
-          <h2 className="text-4xl text-[#FFA500] ">mobile number</h2>
+          <h2 className="text-4xl text-[#FFA500] mt-7">Verify your</h2>
+          <h2 className="text-4xl text-[#FFA500]">mobile number</h2>
           <p className="text-md mb-4 font-bold">
             <span className="border-b border-[#FFA500] pb-2">to call my Em</span>ergency Contacts
           </p>
@@ -96,8 +96,8 @@ function EmergencyModal({ isOpen, onClose }) {
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
          <div className="w-full px-6">
-         <h2 className="text-4xl text-[#FFA500]  mt-7">Enter</h2>
-          <h2 className="text-4xl text-[#FFA500] ">Verification Code</h2>
+         <h2 className="text-4xl text-[#FFA500] mt-7">Enter</h2>
+          <h2 className="text-4xl text-[#FFA500]">Verification Code</h2>
           <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-1">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-1'>+9</span>1 {mobileNumber}</span></p>
           <button 
             className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-10 flex items-center text-xs"

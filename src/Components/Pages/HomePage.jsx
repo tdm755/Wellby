@@ -71,11 +71,11 @@ function HomePage() {
         className={`MainContainer w-full flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
         style={{ backgroundImage: `url(${DefaultBackground})`, backgroundSize : '450px', backgroundAttachment: 'fixed' }}
       >
-        <Header toggleSidebar={toggleSidebar} />
-        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+        <Header />
+        {/* <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         {isSidebarOpen && (
           <div className="absolute inset-0 bg-black opacity-50 z-40" onClick={() => setIsSidebarOpen(false)} />
-        )}
+        )} */}
 
         <HeroSection />
 
