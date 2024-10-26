@@ -52,7 +52,7 @@ function AuthWrapper({ children }) {
         </div>
         
         {/* Hero Image */}
-        <div className={`absolute left-0 right-0  ${isPhone ? 'top-[200px]' : 'top-[100px]'} flex justify-center mx-5`}>
+        <div className={`absolute left-0 right-0  ${isPhone ? 'top-[125px]' : 'top-[100px]'} flex justify-center mx-5`}>
           <img src={HeroImage} alt="Hero" className="w-full h-auto max-w-md" />
         </div>
         
