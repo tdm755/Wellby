@@ -77,7 +77,7 @@ function Dashboard() {
 
 
         <div className="px-5 mb-24 relative">
-          <div className="bg-white rounded-lg p-5 shadow-xl mt-20 left-0 right-0 ">
+          <div className="bg-white rounded-lg p-5 shadow-xl mt-28 xss:mt-24 xs:mt-20 left-0 right-0 ">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3 border-b-[1.5px] border-[#CCCCCC] border-dashed pb-5">
                 <img src={BuildingIcon} alt="Company" className="w-6 h-6" />
