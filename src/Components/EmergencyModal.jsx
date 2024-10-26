@@ -47,15 +47,17 @@ function EmergencyModal({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="relative overflow-hidden" style={{ height: '400px' }}>
         {/* login part */}
-        <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
+        <div className={`absolute w-full transition-all duration-500  ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
-          <h2 className="text-4xl text-[#FFA500]  mt-14">Verify your</h2>
+          <div className="w-full px-6">
+          <h2 className="text-4xl text-[#FFA500]  mt-7">Verify your</h2>
           <h2 className="text-4xl text-[#FFA500] ">mobile number</h2>
           <p className="text-md mb-4 font-bold">
             <span className="border-b border-[#FFA500] pb-2">to call my Em</span>ergency Contacts
           </p>
           <p className="text-[0.85rem] mb-4 text-[#787878]">Your details are secured and will not be shared with the<span className="font-bold"> Emergency Contacts.</span></p>
-          <div className="flex items-center mb-4 gap-2 px-1">
+          </div>
+          <div className="flex items-center mb-4 gap-2 px-6">
             <div className="NumShadow rounded-md relative">
               <select className="bg-white text-gray-700 rounded-md py-3 pl-2 pr-8 font-bold outline-none appearance-none h-12">
                 <option>+91</option>
@@ -79,19 +81,22 @@ function EmergencyModal({ isOpen, onClose }) {
             </div>
           </div>
           {mobileNumber.length === 10 && (
-            <button
-              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-6 w-full text-xl"
+           <div className="flex items-center justify-center">
+             <button
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36] w-[90%] text-white font-bold py-2 px-4 rounded-md mt-6 text-xl NumShadow"
               onClick={handleConfirm}
             >
               Confirm
             </button>
+           </div>
           )}
         </div>
 
         {/* verification part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
-          <h2 className="text-4xl text-[#FFA500]  mt-14">Enter</h2>
+         <div className="w-full px-6">
+         <h2 className="text-4xl text-[#FFA500]  mt-7">Enter</h2>
           <h2 className="text-4xl text-[#FFA500] ">Verification Code</h2>
           <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-1">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-1'>+9</span>1 {mobileNumber}</span></p>
           <button 
@@ -101,14 +106,15 @@ function EmergencyModal({ isOpen, onClose }) {
             CHANGE NUMBER? 
             <img src={ForwardIcon} alt="forward-icon" className="w-4 h-3 ml-2" />
           </button>
-          <div className="flex justify-between mb-3 mt-4 mx-1">
+         </div>
+          <div className="flex justify-between mb-3 mt-4 mx-1 px-6">
             {otp.map((digit, index) => (
               <input
                 key={index}
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-[54px] h-[54px] text-center rounded-md outline-none OTP"
+                className="w-10 h-10 xss:w-[54px] xss:h-[54px] text-center rounded-md outline-none OTP"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);
@@ -128,18 +134,20 @@ function EmergencyModal({ isOpen, onClose }) {
               />
             ))}
           </div>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 px-6">
             <span className={`font-bold ${countdown === 0 ? 'text-[#FF483C]' : 'text-[#FFA500]'}`}>
               {String(Math.floor(countdown / 60)).padStart(2, '0')}:{String(countdown % 60).padStart(2, '0')}
             </span>
             <button className="">OTP not received? <span className="text-[#FF483C] font-bold">Resend OTP</span></button>
           </div>
           {isOtpComplete && (
-            <button
-              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
+           <div className="w-full flex items-center justify-center">
+             <button
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36] w-[90%] text-white font-bold py-2 px-4 NumShadow rounded-md mt-2 text-xl"
             >
               Verify
             </button>
+           </div>
           )}
         </div>
       </div>

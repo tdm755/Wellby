@@ -92,7 +92,7 @@ function Login() {
         {/* verification part */}
         <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-100' : 'opacity-0'}`}
              style={{ transform: showVerification ? 'translateX(0)' : 'translateX(100%)' }}>
-          <h2 className="text-4xl text-[#FFA500] mb-4 mt-14">Verify Number</h2>
+          <h2 className="text-4xl text-[#FFA500] mb-4 mt-7">Verify Number</h2>
           <p className="text-md mb-6"><span className="border-b border-[#FFA500] pb-3">OTP sent to </span><span className="font-bold"><span className='border-b border-[#FFA500] pb-3'>+9</span>1 {mobileNumber}</span></p>
           <button 
             className="text-white bg-[#1A1A1A] rounded-full px-2 py-1 mb-16 flex items-center text-xs"
@@ -108,7 +108,7 @@ function Login() {
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-[54px] h-[54px] text-center rounded-md outline-none OTP"
+                className="w-10 h-10 xss:w-[54px] xss:h-[54px] text-center rounded-md outline-none OTP"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);
@@ -137,7 +137,7 @@ function Login() {
           {isOtpComplete && (
             <button
             onClick={()=>{navigate('/dashboard')}}
-              className="bg-gradient-to-t from-[#148250] to-[#32CC36] text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
+              className="bg-gradient-to-t from-[#148250] to-[#32CC36]  text-white font-bold py-2 px-4 rounded-md mt-2 w-full text-xl"
             >
               Verify
             </button>

@@ -6,7 +6,7 @@ const ActionButtons = ({ onCancel, onSave, showCancel = true, showSave = true })
       {showCancel && (
         <button
           onClick={onCancel}
-          className="px-5 py-2 text-white text-[14px] font-bold bg-gradient-to-t from-[#BA1E0A] to-[#EC503C] rounded-md shadow-md hover:bg-red-600 transition duration-300 ease-in-out"
+          className="w-[33%] py-2 text-white text-[13px] font-medium tracking-[0.11em] bg-gradient-to-t from-[#BA1E0A] to-[#EC503C] rounded-md shadow-md hover:bg-red-600 transition duration-300 ease-in-out"
         >
           CANCEL
         </button>
@@ -14,7 +14,7 @@ const ActionButtons = ({ onCancel, onSave, showCancel = true, showSave = true })
       {showSave && (
         <button
           onClick={onSave}
-          className="px-5 py-2 text-white text-[14px] font-bold bg-gradient-to-t from-[#148250] to-[#32CC36] rounded-md shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
+          className="w-[67%] py-2 text-white text-[13px] font-medium tracking-[0.11em] bg-gradient-to-t from-[#148250] to-[#32CC36] rounded-md shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
         >
           SAVE AND UPDATE
         </button>

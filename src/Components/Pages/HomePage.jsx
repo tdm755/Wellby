@@ -58,9 +58,9 @@ function HomePage() {
   const location = useLocation();
   const pathname = location;
 
-  useEffect(()=>{
-    window.scrollTo(0, 0)
-  }, [pathname])
+  // useEffect(()=>{
+  //   window.scrollTo(0, 0)
+  // }, [pathname])
 
 
   return (
@@ -169,13 +169,15 @@ function HomePage() {
               <div className="bg-gradient-to-t from-[#FFB404] to-[#FFCE05] h-12 rounded-lg tracking-[0.40em] flex items-center justify-center font-semibold text-white text-md uppercase shadow-lg">Mediclaim Policies</div>
 
               <div className="px-4 py-7 flex flex-col gap-3">
-                <div className="flex justify-between">
-                  <img className='w-11' src={CompanyPoliciesIcon} alt="" />
-                  <div className="">
+                <div className="flex justify-between gap-2">
+                  <div className="flex gap-4">
+                  <img className='w-10' src={CompanyPoliciesIcon} alt="" />
+                  <div className="flex flex-col gap-1">
                     <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Company Policy</h4>
                     <span className='text-xs md:text-sm ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>06.04.2024</span></span>
                   </div>
-                  <button className='bg-[#32CC36] h-[26px] w-[70px] rounded-full flex items-center justify-end px-3 py-'><img className='w-4' src={rightArrow} alt="" /></button>
+                  </div>
+                  <button className='bg-[#32CC36] h-[26px] rounded-full flex items-center justify-end pl-5 pr-2 xss:pl-10 xs:pl-14'><img className='w-4' src={rightArrow} alt="" /></button>
                 </div>
 
                 <div className="py-7 flex flex-col gap-7">
@@ -205,12 +207,14 @@ function HomePage() {
 
               <div className="px-4 py-7 flex flex-col gap-3">
                 <div className="flex justify-between">
-                  <img className='w-11' src={CompanyPoliciesIcon} alt="" />
-                  <div className="">
+                  <div className="flex gap-4">
+                  <img className='w-10' src={CompanyPoliciesIcon} alt="" />
+                  <div className="flex flex-col gap-1">                    
                     <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Personal Policy</h4>
-                    <span className='text-xs md:text-sm flex gap-1 ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>Not Mentioned</span> <img className='w-3' src={AlertIcon} alt="" /></span>
+                    <span className='text-xs whitespace-nowrap md:text-sm flex gap-1 ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>Not Mentioned</span> <img className='w-3' src={AlertIcon} alt="" /></span>
                   </div>
-                  <button className='bg-[#32CC36] h-[26px] w-[70px] rounded-full flex items-center justify-end px-3 py-'><img className='w-4' src={rightArrow} alt="" /></button>
+                  </div>
+                  <button className='bg-[#32CC36] h-[26px] rounded-full flex items-center justify-end  pl-5 pr-2 xss:pl-10 xs:pl-14'><img className='w-4' src={rightArrow} alt="" /></button>
                 </div>
                 <div className="py-7 flex flex-col gap-7">
                   <Input label={'Mediclaim Company'} type='text' value={'Manipal Cigna'} icon={MedCompany} />

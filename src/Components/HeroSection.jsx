@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import HeroImage from '../../public/assets/images/HeroSectionImage.png'
-import LogoInHeroSection from '../../public/assets/LogoInHeroSection.svg'
+import LogoInHeroSection from '../../public/assets/images/LogoInHeroSection.svg'
+import StarIcon from '../../public/assets/images/StarIcon.svg'
 import rightArrow from '../../public/assets/images/rightArrow.svg'
 import EmergencyModal from './EmergencyModal'
 
@@ -66,8 +67,9 @@ function HeroSection() {
   return (
     <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 border border-black rounded-b-[40px]'>
       {/* jdhfkjdsh */}
-      <div className="h-[400px] overflow-hidden relative rounded-b-[40px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
-        <img className='w-[320px] ml-16' src={LogoInHeroSection} alt="" />
+      <div className="h-[400px] flex justify-center items-start overflow-hidden relative rounded-b-[40px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
+        <img className=' w-56 absolute top-28 border-black' src={LogoInHeroSection} alt="" />
+        <img className='w-[430px] h-28 ml-[3%]' src={StarIcon} alt="" />
         <img className='absolute -bottom-4' src={HeroImage} alt="" />
       </div>
 
@@ -115,9 +117,10 @@ function HeroSection() {
           </div>
         </div>
       </div>
-
+      
       <EmergencyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
+     
   )
 }
 

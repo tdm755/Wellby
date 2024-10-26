@@ -4,9 +4,24 @@ import HeaderRightSideLogo from "../../public/assets/images/HeaderRightSideLogo.
 import HeroImage from "../../public/assets/SVG/dashboard-hero.svg";
 import CloseIcon from "../../public/assets/icons/close-icon.svg";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function AuthWrapper({ children }) {
   const navigate = useNavigate();
+  const [isPhone, setIsPhone] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPhone(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Check on mount
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleClose = () => {
     navigate('/');
