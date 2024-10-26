@@ -108,7 +108,7 @@ function Login() {
                 type="tel"
                 maxLength="1"
                 value={digit}
-                className="w-10 h-10 text-center rounded-md outline-none NumShadow2"
+                className="w-[54px] h-[54px] text-center rounded-md outline-none OTP"
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   handleOtpChange(index, value);

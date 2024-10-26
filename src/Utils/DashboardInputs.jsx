@@ -8,7 +8,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
   if (type === 'textarea'){
     return(
       <div className='flex flex-col gap-[2px]'>
-        <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
+        <label className='px- bg-white text-[13px] text-[#FF9E00] font-light' htmlFor="">{label}</label>
         <textarea className={`outline-none font-medium text-[16px] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 w-full rounded-[4px] py-2 ${readOnlyStyle}`} placeholder={placeholder} value={value} readOnly={readOnlyOf} />
       </div>
     )
@@ -17,7 +17,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
   if (type === 'number') {
     return (
       <div className='flex flex-col gap-[2px]'>
-        <label className='bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
+        <label className='bg-white text-[13px] text-[#FF9E00] font-light ' htmlFor="">{label}</label>
         <div className="flex gap-2">
           <div className="rounded-md relative">
             <select className={`outline-none font-medium text-[16px] appearance-none placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 pr-7 rounded-[4px] py-2 ${readOnlyStyle}`}>
@@ -36,7 +36,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
   if (type === 'select') {
     return (
       <div className='flex flex-col gap-[2px]'>
-        <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
+        <label className='bg-white text-[13px] text-[#FF9E00] font-light' htmlFor="">{label}</label>
         <div className="rounded-md relative">
           <select
             className={`outline-none font-medium text-[19px] appearance-none pl-3 pr-7 w-full rounded-[4px] py-2 ${readOnlyStyle}`}
@@ -99,7 +99,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
 
     return (
       <div className='flex flex-col gap-[2px]'>
-        <label className='bg-white text-sm text-[#FF9E00]' htmlFor="">{label}</label>
+        <label className='bg-white text-[13px] text-[#FF9E00] font-light' htmlFor="">{label}</label>
         <div className="relative">
           <input
             type="text"
@@ -129,7 +129,7 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
 
   return (
     <div className='flex flex-col gap-[2px]'>
-      <label className='px- bg-white text-sm text-[#FF9E00] ' htmlFor="">{label}</label>
+      <label className='px- bg-white text-[13px] text-[#FF9E00] font-light' htmlFor="">{label}</label>
       <input className={`outline-none font-medium text-[16px] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 w-full rounded-[4px] py-2 ${readOnlyStyle}`} placeholder={placeholder} type={type} value={value} readOnly={readOnlyOf} />
     </div>
   )

@@ -29,8 +29,8 @@ function Dashboard() {
       <div
         className="MainContainer relative bg-[#EEEEEE]"
       >
-        <DashboardHeader />
 
+        <DashboardHeader />
         <div className="h-[467px] sticky top-0 rounded-b-[40px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
           {/* This div remains sticky */}
         </div>

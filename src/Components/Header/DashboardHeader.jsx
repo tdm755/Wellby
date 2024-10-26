@@ -1,27 +1,30 @@
 import { useState, useEffect } from 'react';
 import Logo from '../../../public/logo.svg';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import HeaderRightSideLogo from '../../../public/assets/images/HeaderRightSideLogo.png';
 import LogoutIcon from '../../../public/assets/SVG/logout-icon.svg';
 
 function DashboardHeader() {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const {pathname} = location;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollThreshold = pathname === '/dashboard' ? 450 : 40; 
+      setIsScrolled(window.scrollY > scrollThreshold);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <header 
-      className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center rounded-bl-[40px] z-40 transition-all duration-300 ${
+      className={`MainHeaderWidth ${isScrolled ? 'fixed' : 'absolute'} w-full py-3 top-0 items-center justify-center rounded-bl-[40px] z-50 transition-all duration-300 ${
         isScrolled ? 'bg-[#002D3A] shadow-md ' : ''
       }`}
     >

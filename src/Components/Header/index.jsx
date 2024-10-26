@@ -8,7 +8,7 @@ function Header({ toggleSidebar }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 380);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -19,7 +19,7 @@ function Header({ toggleSidebar }) {
   }, []);
 
   return (
-    <header className={`MainHeaderWidth fixed w-full py-3 top-0 items-center justify-center z-40 transition-colors duration-300 ${isScrolled ? 'bg-[#FFCE05] shadow-md rounded-bl-[40px]' : ''}`}>
+    <header className={`MainHeaderWidth ${isScrolled ? 'fixed' : 'absolute'} w-full py-3 top-0 items-center justify-center z-40 transition-colors duration-300 ${isScrolled ? 'bg-[#FFCE05] shadow-md rounded-bl-[40px]' : ''}`}>
       <div className="flex items-center flex-wrap w-full py-3">
         <div className="flex items-center justify-center w-[16%]">
           <img 
@@ -29,9 +29,9 @@ function Header({ toggleSidebar }) {
             onClick={toggleSidebar}
           />
         </div>
-        <div className="flex-grow w-[84%] h-12 flex  justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45 ">
-          <div className=" border-white h-full flex items-center mb-[1.5px] justify-center w-full">
-            <span className="text-white whitespace-nowrap font-semibold text-start w-full  pl-[17px]  xss:pl-6 text-[9px] ssxss:text-[10px] sxss:text-[12px] xss:text-[15px]">
+        <div className="flex-grow w-[84%] h-12 flex justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45 ">
+          <div className="border-white h-full flex items-center mb-[1.5px] justify-center w-full">
+            <span className="text-white whitespace-nowrap font-semibold text-start w-full pl-[17px] xss:pl-6 text-[9px] ssxss:text-[10px] sxss:text-[12px] xss:text-[15px]">
               Safety is Everyone&apos;s responsibility
             </span>
           </div>
@@ -47,4 +47,3 @@ Header.propTypes = {
 };
 
 export default Header;
-      

@@ -85,7 +85,7 @@ function HomePage() {
             <div className="flex flex-col gap-4 w-full items-center justify-center">
 
               <div className='flex gap-1 items-center'>
-                 <h3 className='text-sm md:text-md font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
+                 <h3 className='text-sm md:text-[16px] font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
                 <div className="relative group cursor-pointer">
                   <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
                   <div className="tooltip absolute top-7 -right-20 z-40">
@@ -98,7 +98,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="px-10 w-full bg-white h-12 font-semibold text-[#0F4254] flex items-center justify-center text-lg md:text-xl rounded-lg">Nitesh Rajkumar Rathod</div>
+              <div className="px-10 w-full bg-white h-12 font-semibold text-[#0F4254] flex items-center justify-center text-lg md:text-[22px] rounded-lg NumShadow">Nitesh Rajkumar Rathod</div>
             </div>
             <FormCompo
               title={'Personal Details'}
@@ -119,7 +119,7 @@ function HomePage() {
           <div className="flex flex-col items-center justify-center gap-4 absolute -top-24 w-full px-5">
             <h3 className='text-lg md:text-[22px] font-semibold text-[#0F4254]'>Prepare and Respond!</h3>
             <div className="flex gap-4 w-full">
-              <div className="h-28 rounded-md shadow-xl bg-white w-full flex flex-col gap-1 items-center justify-center">
+              <div className="h-28 rounded-md shadow-xl bg-white w-full flex flex-col gap-[6px] items-center justify-center">
                 <p className='tracking-[0.20em] text-xs md:text-sm text-[#787878]'>BLOOD GROUP</p>
                 <div className="h-1 w-[90%]">
                   <div
@@ -134,7 +134,7 @@ function HomePage() {
                 </div>
                 <span className='text-xl md:text-3xl text-[#DC2A3C] font-semibold'>AB +ve</span>
               </div>
-              <div className="h-28 rounded-md shadow-xl bg-white w-full flex flex-col gap-2 items-center justify-center">
+              <div className="h-28 rounded-md shadow-xl bg-white w-full flex flex-col gap-[6px] items-center justify-center">
                 <p className='tracking-[0.20em] text-xs md:text-sm text-[#787878]'>AMBULANCE</p>
                 <div className="h-1 w-[90%]">
                   <div
@@ -224,6 +224,10 @@ function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-6 mb-2">
+            <img src={AddImage} alt="" />
           </div>
 
           {/* Blog Section */}
