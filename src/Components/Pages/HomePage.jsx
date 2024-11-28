@@ -64,13 +64,15 @@ function HomePage() {
 
 
   return (
-    <div className={`min-h-screen bg-black flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
+    <div className={`min-h-screen flex justify-center select-none ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
 
       <div
         {...handlers}
-        className={`MainContainer w-full flex flex-col items-center justify-center min-h-screen bg-cover bg-center relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
-        style={{ backgroundImage: `url(${DefaultBackground})`, backgroundSize : '450px', backgroundAttachment: 'fixed' }}
+        className={`MainContainer w-full flex flex-col items-center justify-center  relative ${isSidebarOpen ? 'overflow-hidden' : 'overflow-auto'}`}
       >
+        <div className="background-fixed "
+          style={{ backgroundImage: `url(${DefaultBackground})`, backgroundSize: '450px', backgroundRepeat : 'no-repeat' }}
+        ></div>
         <Header />
         {/* <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         {isSidebarOpen && (
@@ -85,7 +87,7 @@ function HomePage() {
             <div className="flex flex-col gap-4 w-full items-center justify-center">
 
               <div className='flex gap-1 items-center'>
-                 <h3 className='text-sm md:text-[16px] font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
+                <h3 className='text-sm md:text-[16px] font-semibold tracking-[0.20em] text-[#0F4254] uppercase'> Find my details below</h3>
                 <div className="relative group cursor-pointer">
                   <img className='w-3 AlertIconH' src={AlertIcon} alt="" />
                   <div className="tooltip absolute top-7 -right-20 z-40">
@@ -152,7 +154,7 @@ function HomePage() {
             </div>
           </div>
 
-         
+
           {/* Mediclaim Policies */}
           <div className="w-full flex flex-col gap-20 mt-[90px] px-5">
 
@@ -171,17 +173,17 @@ function HomePage() {
               <div className="px-4 py-7 flex flex-col gap-3">
                 <div className="flex justify-between gap-2">
                   <div className="flex gap-4">
-                  <img className='w-10' src={CompanyPoliciesIcon} alt="" />
-                  <div className="flex flex-col gap-1">
-                    <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Company Policy</h4>
-                    <span className='text-xs md:text-sm ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>06.04.2024</span></span>
-                  </div>
+                    <img className='w-10' src={CompanyPoliciesIcon} alt="" />
+                    <div className="flex flex-col gap-1">
+                      <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Company Policy</h4>
+                      <span className='text-xs md:text-sm ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>06.04.2024</span></span>
+                    </div>
                   </div>
                   <button className='bg-[#32CC36] h-[26px] rounded-full flex items-center justify-end pl-5 pr-2 xss:pl-10 xs:pl-14'><img className='w-4' src={rightArrow} alt="" /></button>
                 </div>
 
                 <div className="py-7 flex flex-col gap-7">
-                  
+
                   <Input label={'Mediclaim Company'} type='text' value={'Manipal Cigna'} icon={MedCompany} />
                   <Input label={'Mediclaim-ID'} type='text' value={'5095491581'} icon={PolicyRelationShipManager} />
                   <Input label={'Policy Relationship Manager'} type='text' value={'Rajkumar Tiwari'} icon={MedID} icon2={CallIcon} />
@@ -208,11 +210,11 @@ function HomePage() {
               <div className="px-4 py-7 flex flex-col gap-3">
                 <div className="flex justify-between">
                   <div className="flex gap-4">
-                  <img className='w-10' src={CompanyPoliciesIcon} alt="" />
-                  <div className="flex flex-col gap-1">                    
-                    <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Personal Policy</h4>
-                    <span className='text-xs whitespace-nowrap md:text-sm flex gap-1 ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>Not Mentioned</span> <img className='w-3' src={AlertIcon} alt="" /></span>
-                  </div>
+                    <img className='w-10' src={CompanyPoliciesIcon} alt="" />
+                    <div className="flex flex-col gap-1">
+                      <h4 className='text-lg md:text-2xl font-bold text-[#32CC36]'>Personal Policy</h4>
+                      <span className='text-xs whitespace-nowrap md:text-sm flex gap-1 ml-1'>Expiry Date: <span className='font-semibold text-[#3C3C3C]'>Not Mentioned</span> <img className='w-3' src={AlertIcon} alt="" /></span>
+                    </div>
                   </div>
                   <button className='bg-[#32CC36] h-[26px] rounded-full flex items-center justify-end  pl-5 pr-2 xss:pl-10 xs:pl-14'><img className='w-4' src={rightArrow} alt="" /></button>
                 </div>

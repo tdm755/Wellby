@@ -47,7 +47,7 @@ function EmergencyModal({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="relative overflow-hidden" style={{ height: '400px', overflow: 'hidden' }}>
         {/* login part */}
-        <div className={`absolute w-full transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
+        <div className={`absolute w-full  transition-all duration-500 ease-in-out ${showVerification ? 'opacity-0' : 'opacity-100'}`}
              style={{ transform: showVerification ? 'translateX(-100%)' : 'translateX(0)' }}>
           <div className="w-full px-6">
           <h2 className="text-4xl text-[#FFA500] mt-7">Verify your</h2>

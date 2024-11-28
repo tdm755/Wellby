@@ -54,18 +54,29 @@ function HeroSection() {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      
+      document.body.style.cssText = `
+        position: fixed;
+        top: -${scrollY}px;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        width: 100%;
+      `;
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.cssText = '';
+      window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
     }
-
+  
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.cssText = '';
     };
   }, [isModalOpen]);
 
+
   return (
-    <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 border border-black rounded-b-[40px]'>
+    <div className='w-full h-[680px] bg-[#002D3A] flex flex-col gap-7 rounded-b-[40px]'>
       {/* jdhfkjdsh */}
       <div className="h-[400px] flex justify-center items-start overflow-hidden relative rounded-b-[40px] pt-[88px] bg-gradient-to-t from-[#FFB404] to-[#FFCE05]">
         <img className=' w-56 absolute top-28 border-black' src={LogoInHeroSection} alt="" />

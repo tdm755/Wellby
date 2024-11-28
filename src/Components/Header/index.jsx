@@ -33,13 +33,13 @@ function Header({ toggleSidebar }) {
             onClick={()=>navigate('/sidebar')}
           />
         </div>
-        <div className="flex-grow w-[84%] h-12 flex justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45 ">
+        <div className="flex-grow w-[84%] h-12 flex relative justify-center items-end bg-[#002D3A] rounded-l-full shadow-xl shadow-red-500/45 ">
           <div className="border-white h-full flex items-center mb-[1.5px] justify-center w-full">
             <span className="text-white whitespace-nowrap font-semibold text-start w-full pl-[17px] xss:pl-6 text-[9px] ssxss:text-[10px] sxss:text-[12px] xss:text-[15px]">
               Safety is Everyone&apos;s responsibility
             </span>
           </div>
-          <img className='h-9' src={HeaderRightSideLogo} alt="" />
+          <img className='h-9 w-16 md:w-20' src={HeaderRightSideLogo} alt="" />
         </div>
       </div>
     </header>
