@@ -2,7 +2,7 @@ import AuthWrapper from '../../Utils/AuthWrapper';
 import { useState, useEffect } from 'react';
 import DownIcon from '../../../public/assets/SVG/down-icon.svg'
 import ForwardIcon from '../../../public/assets/SVG/forward-arrow-icon.svg'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
     const [mobileNumber, setMobileNumber] = useState('');
@@ -11,6 +11,14 @@ function Login() {
     const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
   
     const navigate = useNavigate();
+
+    const location = useLocation();
+
+    const {pathname} = location;
+
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    }, [pathname])
   
     useEffect(() => {
       let timer;

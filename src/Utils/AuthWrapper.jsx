@@ -9,10 +9,12 @@ import { useEffect, useState } from "react";
 function AuthWrapper({ children }) {
   const navigate = useNavigate();
   const [isPhone, setIsPhone] = useState(false);
+  const [showHero, setShowHero] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setIsPhone(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setShowHero(window.innerHeight > 620);
     };
 
     handleResize(); // Check on mount
@@ -52,10 +54,11 @@ function AuthWrapper({ children }) {
         </div>
         
         {/* Hero Image */}
-        <div className={`absolute left-0 right-0  ${isPhone ? 'top-[90px]' : 'top-[70px]'} flex justify-center mx-5`}>
+        {showHero && (
+        <div className="absolute left-0 right-0 bottom-[430px] flex justify-center mx-5 ">
           <img src={HeroImage} alt="Hero" className="w-full h-auto max-w-md" />
         </div>
-        
+        )}
         {/* White part overlaying the gradient and hero image */}
         <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 h-[480px]">
           {/* Close button */}

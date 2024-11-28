@@ -38,7 +38,7 @@ function Sidebar() {
           <HomePage />
         </div>
       <div 
-        className={`SideBar h-full absolute top-0 z-50  bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto  flex flex-col `}
+        className={`SideBar w-[70%] h-full absolute top-0 z-50  bg-[#FF3E4D] transition-all duration-500 ease-in-out overflow-y-auto  flex flex-col `}
       >
         <div  onClick={() => {navigate('/')}} className="p-5 flex justify-end items-center cursor-pointer">
           <span className="mr-2 text-white text-xs font-bold cursor-pointer" onClick={() => { /* Logic to close sidebar */ }}>CLOSE</span>
