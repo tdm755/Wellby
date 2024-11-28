@@ -53,7 +53,7 @@ function UploadUtil({ uploadLabel,  ReadOnlyOf = false }) {
 
   return (
     <div className="border border-[#C8C8C8] rounded-lg overflow-hidden w-full">
-      <div className="w-full h-20 flex justify-center items-center overflow-hidden">
+      <div className="w-full h-20 flex justify-center items-start overflow-hidden">
         {file ? (
           preview ? (
             file.type.startsWith('image/') ? (

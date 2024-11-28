@@ -27,7 +27,20 @@ function DashboardInputs({ label, type, value, placeholder, readOnlyOf, options,
               <img src={DownIcon} alt="down-icon" className="w-[9px]" />
             </div>
           </div>
-          <input className={`outline-none font-medium text-[16px] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 w-full rounded-[4px] py-2 ${readOnlyStyle}`} placeholder={placeholder} type={type === 'num' ? 'number' : type} value={value} readOnly={readOnlyOf} />
+          <input 
+            className={`outline-none font-medium text-[16px] placeholder:text-[13px] placeholder:tracking-[0.20em] placeholder:font-normal pl-3 w-full rounded-[4px] py-2 ${readOnlyStyle}`}
+            placeholder={placeholder} 
+            type="text"
+            pattern="[0-9]*"
+            inputMode="numeric"
+            maxLength={10}
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+              onChange && onChange(e);
+            }}
+            value={value}
+            readOnly={readOnlyOf}
+          />
         </div>
       </div>
     )
